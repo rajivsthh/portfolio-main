@@ -36,7 +36,7 @@ const HeroSection = () => {
             {/* Social Links */}
             <div className="flex justify-center gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/rajivsthh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
