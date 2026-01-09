@@ -45,7 +45,7 @@ const HeroSection = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/rajivsthh/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"

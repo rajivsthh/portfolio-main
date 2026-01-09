@@ -2,7 +2,7 @@ import { Shield, Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/rajivsthh" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/rajivsthh/" },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
   { icon: Mail, label: "Email", href: "mailto:rajivshresthaa23@gmail.com" },
 ];

@@ -16,7 +16,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com", color: "hover:text-[#0A66C2]" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/rajivsthh/", color: "hover:text-[#0A66C2]" },
   { icon: Github, label: "GitHub", href: "https://github.com/rajivsthh", color: "hover:text-foreground" },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com", color: "hover:text-[#1DA1F2]" },
 ];
