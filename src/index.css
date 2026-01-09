@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 215 20% 35%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 20% 35%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 20% 35%;
+
+    --primary: 210 55% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 15% 92%;
+    --secondary-foreground: 215 20% 40%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 210 45% 88%;
+    --accent-foreground: 210 55% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 210 55% 50%;
+
+    --radius: 0.625rem;
+
+    /* Professional theme tokens */
+    --slate-heading: 215 25% 25%;
+    --calm-blue: 210 55% 50%;
+    --calm-blue-light: 210 50% 60%;
+    --surface-elevated: 0 0% 100%;
+    --gradient-pro: linear-gradient(135deg, hsl(210, 55%, 50%) 0%, hsl(210, 50%, 60%) 100%);
+    --shadow-soft: 0 2px 12px hsl(215, 20%, 35%, 0.06);
+    --shadow-medium: 0 4px 20px hsl(215, 20%, 35%, 0.1);
+  }
+
+  .dark {
+    --background: 215 50% 12%;
+    --foreground: 210 40% 98%;
+    
+    --card: 215 45% 16%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 45% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 85% 55%;
+    --primary-foreground: 215 50% 12%;
+
+    --secondary: 215 40% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 35% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 100% 60%;
+    --accent-foreground: 215 50% 12%;
+
+    --border: 215 30% 25%;
+    --input: 215 30% 25%;
+    --ring: 200 85% 55%;
+
+    --navy: 215 50% 20%;
+    --navy-light: 215 40% 30%;
+    --surface-elevated: 215 40% 18%;
+    --gradient-pro: linear-gradient(135deg, hsl(200, 85%, 55%) 0%, hsl(210, 100%, 60%) 100%);
+    --shadow-soft: 0 4px 20px hsl(0, 0%, 0%, 0.2);
+    --shadow-medium: 0 8px 30px hsl(0, 0%, 0%, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-pro);
+  }
+
+  .text-heading {
+    color: hsl(var(--slate-heading));
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Professional Card Component */
+  .card-pro {
+    @apply bg-card border border-border/60 rounded-xl;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-pro:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+
+  /* Icon Container with hover */
+  .icon-container {
+    @apply p-2.5 rounded-lg bg-primary/10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .group:hover .icon-container,
+  .card-pro:hover .icon-container {
+    @apply bg-primary/20;
+    transform: scale(1.05);
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary/90;
+    box-shadow: 0 4px 14px hsl(var(--primary) / 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary font-medium px-6 py-3 rounded-lg bg-transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-outline:hover {
+    @apply bg-primary/10 border-primary;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline:active {
+    transform: translateY(0);
+  }
+
+  .btn-outline:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Section Label Component */
+  .section-label {
+    @apply text-primary font-mono text-xs tracking-widest uppercase font-medium;
+  }
+
+  /* Social Icon Button */
+  .social-icon {
+    @apply p-3 rounded-lg bg-muted/50 border border-transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .social-icon:hover {
+    @apply bg-primary/10 border-primary/20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.15);
+  }
+
+  .social-icon svg {
+    @apply text-muted-foreground;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover svg {
+    @apply text-primary;
+  }
+
+  /* Link hover state */
+  .link-subtle {
+    @apply text-muted-foreground relative;
+    transition: color 0.2s ease;
+  }
+
+  .link-subtle:hover {
+    @apply text-primary;
+  }
+
+  .link-subtle:focus-visible {
+    @apply outline-none text-primary;
+  }
+
+  /* Link with underline animation */
+  .link-animated {
+    @apply text-muted-foreground relative inline-flex items-center gap-1.5;
+    transition: color 0.2s ease;
+  }
+
+  .link-animated::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-primary;
+    transition: width 0.3s ease;
+  }
+
+  .link-animated:hover {
+    @apply text-primary;
+  }
+
+  .link-animated:hover::after {
+    @apply w-full;
+  }
+
+  /* Skill tag hover */
+  .skill-tag {
+    @apply px-3 py-1.5 text-sm bg-muted/60 rounded-md text-muted-foreground;
+    transition: all 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    @apply bg-primary/10 text-primary;
+  }
+
+  /* Project tag */
+  .project-tag {
+    @apply px-2.5 py-1 text-xs bg-muted/60 rounded text-muted-foreground;
+    transition: all 0.2s ease;
+  }
+
+  .project-tag:hover {
+    @apply bg-primary/10 text-primary;
+  }
+
+  /* Input focus state */
+  .input-pro {
+    @apply w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground/70;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .input-pro:hover {
+    @apply border-border/80;
+  }
+
+  .input-pro:focus {
+    @apply outline-none border-primary/50;
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.1);
+  }
+
+  /* Contact info item */
+  .contact-item {
+    @apply flex items-center gap-4;
+    transition: transform 0.2s ease;
+  }
+
+  .contact-item:hover {
+    transform: translateX(4px);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.5s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { 
+    box-shadow: 0 4px 20px hsl(210, 100%, 45%, 0.15);
+  }
+  50% { 
+    box-shadow: 0 8px 30px hsl(210, 100%, 45%, 0.25);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
