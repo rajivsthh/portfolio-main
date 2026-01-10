@@ -30,7 +30,7 @@ const projects = [
     tags: ["AI Chatbot", "Education", "Platform"],
     icon: GraduationCap,
     links: {
-      demo: "#",
+      demo: "https://seekhanepal.vercel.app/",
       github: "#",
     },
   },
