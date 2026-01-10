@@ -9,7 +9,7 @@ const projects = [
     icon: Shield,
     links: {
       demo: "#",
-      github: "#",
+      github: "https://github.com/SAFE-MCP/safe-mcp",
     },
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     tags: ["AI", "Hackathon", "Automation"],
     icon: FileText,
     links: {
-      demo: "#",
+      demo: "https://100x-hackathon.vercel.app/",
       github: "#",
     },
   },
