@@ -8,16 +8,33 @@ const posts = [
     link: "#",
   },
   {
-    title: "Lessons from Advent of the Cyber 2025",
-    date: "Dec 2025",
-    excerpt: "Key takeaways and write-ups from the Advent of the Cyber event on TryHackMe.",
-    link: "#",
-  },
-  {
     title: "Hands-on: Building a Secure CI Pipeline",
     date: "Nov 2024",
     excerpt: "Small steps to harden your CI workflows and avoid common pitfalls.",
     link: "#",
+  },
+];
+
+const adventCategories = [
+  {
+    domain: "Web Security",
+    topics: ["IDOR", "XSS", "cURL exploitation", "Burp Suite"],
+  },
+  {
+    domain: "Blue Teaming",
+    topics: ["Splunk (SIEM)", "Microsoft Sentinel", "Log Analysis"],
+  },
+  {
+    domain: "Malware Analysis",
+    topics: ["Reverse engineering", "YARA rules", "Registry forensics"],
+  },
+  {
+    domain: "Emerging Tech",
+    topics: ["AI Prompt Injection", "Cloud Security (AWS)"],
+  },
+  {
+    domain: "Specialized Ops",
+    topics: ["ICS/SCADA (Modbus)", "Docker Container security"],
   },
 ];
 
@@ -51,6 +68,32 @@ const BlogSection = () => {
                 </a>
               </article>
             ))}
+          </div>
+
+          {/* Advent of the Cyber 2025 writeups grouped by Security Domain */}
+          <div className="mt-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-heading">Advent of the Cyber 2025 — Writeups by Security Domain</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Grouped write-ups to showcase the range of topics covered during the Advent of the Cyber 2025 event.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {adventCategories.map((cat, idx) => (
+                <article key={idx} className="card-pro p-6 group">
+                  <h4 className="text-lg font-semibold text-heading mb-3">{cat.domain}</h4>
+                  <ul className="text-sm text-muted-foreground list-disc list-inside mb-4">
+                    {cat.topics.map((t, i) => (
+                      <li key={i}>{t}</li>
+                    ))}
+                  </ul>
+
+                  <a href="#" className="link-animated inline-flex items-center gap-2 text-sm font-medium">
+                    View writeups
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>
