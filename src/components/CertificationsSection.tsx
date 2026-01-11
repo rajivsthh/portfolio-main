@@ -4,7 +4,12 @@ interface Certification {
   title: string;
   subtitle: string;
   achievement: string;
-  icon: LucideIcon;
+  // optional icon (vector) or img (photo). Prefer `img` when you have a photo/pdf.
+  icon?: LucideIcon;
+  // public-facing path, e.g. /images/certificates/foo.jpg or /certificates/foo.pdf
+  img?: string;
+  // optional link to open the certificate (image or pdf)
+  link?: string;
   highlight?: boolean;
 }
 
@@ -27,6 +32,27 @@ const certifications: Certification[] = [
     subtitle: "Programming Course",
     achievement: "6 Days Course",
     icon: BookOpen,
+  },
+  {
+    title: "KIST FAIR 2081 - Certificate Image",
+    subtitle: "KIST Fair Certificate (photo)",
+    achievement: "Certificate Photo",
+    img: "/images/certificates/kistFair.jpeg",
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    subtitle: "TryHackMe - Online Course",
+    achievement: "Completion Certificate",
+    // PDF certificate (place it in `public/certificates/tryhackme.pdf`)
+    img: "/certificates/tryhackme.pdf",
+    link: "/certificates/tryhackme.pdf",
+  },
+  {
+    title: "Advent of the Cyber 2025 (TryHackMe)",
+    subtitle: "CTF / Learning Event, Labs",
+    achievement: "Participation Badge",
+    img: "/images/certificates/hackathon.jpeg",
+    link: "/images/certificates/hackathon.jpeg",
   },
   {
     title: "Introduction to Cybersecurity",
@@ -63,14 +89,27 @@ const CertificationsSection = () => {
                 className={`card-pro p-6 text-center ${cert.highlight ? 'border-primary/20' : ''}`}
               >
                 <div className={`mx-auto w-14 h-14 rounded-full flex items-center justify-center mb-5 ${cert.highlight ? 'bg-primary/10' : 'bg-muted/60'}`}>
-                  <cert.icon className={`w-6 h-6 ${cert.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                  {cert.img ? (
+                    // show an inline thumbnail for images; PDFs will open via the link below
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={cert.img} alt={`${cert.title} certificate`} className="w-10 h-10 object-contain rounded" />
+                  ) : (
+                    cert.icon && <cert.icon className={`w-6 h-6 ${cert.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                  )}
                 </div>
-                
+
                 <h3 className="font-semibold text-heading mb-1">{cert.title}</h3>
                 <p className="text-muted-foreground text-sm mb-3">{cert.subtitle}</p>
-                <span className={`inline-block px-3 py-1.5 rounded-md text-sm ${cert.highlight ? 'bg-primary/10 text-primary font-medium' : 'bg-muted/60 text-muted-foreground'}`}>
-                  {cert.achievement}
-                </span>
+                <div className="flex items-center justify-center gap-3">
+                  <span className={`inline-block px-3 py-1.5 rounded-md text-sm ${cert.highlight ? 'bg-primary/10 text-primary font-medium' : 'bg-muted/60 text-muted-foreground'}`}>
+                    {cert.achievement}
+                  </span>
+                  {cert.link && (
+                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="link-animated text-sm font-medium">
+                      View
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
