@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @layer base {
   :root {
@@ -41,7 +41,11 @@
     --calm-blue: 210 55% 50%;
     --calm-blue-light: 210 50% 60%;
     --surface-elevated: 0 0% 100%;
-    --gradient-pro: linear-gradient(135deg, hsl(210, 55%, 50%) 0%, hsl(210, 50%, 60%) 100%);
+    --gradient-pro: linear-gradient(
+      135deg,
+      hsl(210, 55%, 50%) 0%,
+      hsl(210, 50%, 60%) 100%
+    );
     --shadow-soft: 0 2px 12px hsl(215, 20%, 35%, 0.06);
     --shadow-medium: 0 4px 20px hsl(215, 20%, 35%, 0.1);
   }
@@ -49,7 +53,7 @@
   .dark {
     --background: 215 50% 12%;
     --foreground: 210 40% 98%;
-    
+
     --card: 215 45% 16%;
     --card-foreground: 210 40% 98%;
 
@@ -75,7 +79,11 @@
     --navy: 215 50% 20%;
     --navy-light: 215 40% 30%;
     --surface-elevated: 215 40% 18%;
-    --gradient-pro: linear-gradient(135deg, hsl(200, 85%, 55%) 0%, hsl(210, 100%, 60%) 100%);
+    --gradient-pro: linear-gradient(
+      135deg,
+      hsl(200, 85%, 55%) 0%,
+      hsl(210, 100%, 60%) 100%
+    );
     --shadow-soft: 0 4px 20px hsl(0, 0%, 0%, 0.2);
     --shadow-medium: 0 8px 30px hsl(0, 0%, 0%, 0.3);
   }
@@ -92,11 +100,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
-  code, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+  code,
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -119,7 +128,7 @@
   }
 
   .grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 80px 80px;
@@ -235,7 +244,7 @@
   }
 
   .link-animated::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-0 h-px bg-primary;
     transition: width 0.3s ease;
   }
@@ -313,15 +322,21 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { 
+  0%,
+  100% {
     box-shadow: 0 4px 20px hsl(210, 100%, 45%, 0.15);
   }
-  50% { 
+  50% {
     box-shadow: 0 8px 30px hsl(210, 100%, 45%, 0.25);
   }
 }
