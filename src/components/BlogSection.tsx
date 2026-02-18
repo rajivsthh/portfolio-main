@@ -1,4 +1,5 @@
 import { ExternalLink, FileText } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const posts = [
   {
@@ -49,52 +50,63 @@ const BlogSection = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">Short technical posts, write-ups and lessons learned from hands-on labs and projects.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {posts.map((post, index) => (
-              <article key={index} className="card-pro p-6 group">
-                <div className="mb-3 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-primary" />
-                    <h3 className="font-semibold text-heading">{post.title}</h3>
-                  </div>
-                  <span className="text-xs text-muted-foreground">{post.date}</span>
-                </div>
+          <Tabs defaultValue="blog" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+              <TabsTrigger value="blog">Blog Posts</TabsTrigger>
+              <TabsTrigger value="writeups">Write-ups</TabsTrigger>
+            </TabsList>
 
-                <p className="text-muted-foreground text-sm mb-4">{post.excerpt}</p>
+            <TabsContent value="blog" className="mt-0">
+              <div className="grid md:grid-cols-2 gap-5">
+                {posts.map((post, index) => (
+                  <article key={index} className="card-pro p-6 group">
+                    <div className="mb-3 flex items-center gap-3">
+                      <FileText className="w-5 h-5 text-primary" />
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-heading">{post.title}</h3>
+                        <span className="text-xs text-muted-foreground">{post.date}</span>
+                      </div>
+                    </div>
 
-                <a href={post.link} className="link-animated inline-flex items-center gap-2 text-sm font-medium">
-                  Read
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </article>
-            ))}
-          </div>
+                    <p className="text-muted-foreground text-sm mb-4">{post.excerpt}</p>
 
-          {/* Advent of the Cyber 2025 writeups grouped by Security Domain */}
-          <div className="mt-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-heading">Advent of the Cyber 2025 — Writeups by Security Domain</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">Grouped write-ups to showcase the range of topics covered during the Advent of the Cyber 2025 event.</p>
-            </div>
+                    <a href={post.link} className="link-animated inline-flex items-center gap-2 text-sm font-medium">
+                      Read article
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </TabsContent>
 
-            <div className="grid md:grid-cols-3 gap-5">
-              {adventCategories.map((cat, idx) => (
-                <article key={idx} className="card-pro p-6 group">
-                  <h4 className="text-lg font-semibold text-heading mb-3">{cat.domain}</h4>
-                  <ul className="text-sm text-muted-foreground list-disc list-inside mb-4">
-                    {cat.topics.map((t, i) => (
-                      <li key={i}>{t}</li>
-                    ))}
-                  </ul>
+            <TabsContent value="writeups" className="mt-0">
+              <div className="mb-6 text-center">
+                <h3 className="text-xl font-semibold text-heading mb-2">Advent of Cyber 2025</h3>
+                <p className="text-sm text-muted-foreground">Grouped by security domain</p>
+              </div>
 
-                  <a href="#" className="link-animated inline-flex items-center gap-2 text-sm font-medium">
-                    View writeups
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
+              <div className="grid md:grid-cols-3 gap-5">
+                {adventCategories.map((cat, idx) => (
+                  <article key={idx} className="card-pro p-6 group">
+                    <h4 className="text-lg font-semibold text-heading mb-3">{cat.domain}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1 mb-4">
+                      {cat.topics.map((t, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a href="#" className="link-animated inline-flex items-center gap-2 text-sm font-medium">
+                      View writeups
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>
