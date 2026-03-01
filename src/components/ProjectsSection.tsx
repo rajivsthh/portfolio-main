@@ -1,6 +1,17 @@
-import { Shield, FileText, GraduationCap, ExternalLink, Github } from 'lucide-react';
+import { Shield, FileText, GraduationCap, ShoppingCart, Hammer, ExternalLink, Github } from 'lucide-react';
 
 const projects = [
+  {
+    title: "5th Avenue - KEC Hack-a-lite 3.0",
+    role: "KEC Hackathon",
+    description: "Built Rent A Construction — a marketplace platform for renting construction materials and equipment, reducing idle asset waste and contractor costs.",
+    tags: ["React", "Web", "Marketplace", "Hackathon"],
+    icon: Hammer,
+    links: {
+      demo: "https://5th-avenue-kec-hack-a-lite-3-o.vercel.app/",
+      github: "https://github.com/dhirendraxd/5th-Avenue-KEC-Hack-a-Lite-3.o",
+    },
+  },
   {
     title: "SAFE-MCP Security Framework",
     role: "Contributor",
