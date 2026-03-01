@@ -1,6 +1,17 @@
-import { Shield, FileText, GraduationCap, ShoppingCart, Hammer, ExternalLink, Github } from 'lucide-react';
+import { Shield, FileText, GraduationCap, Hammer, Lock, ExternalLink, Github } from 'lucide-react';
 
 const projects = [
+  {
+    title: "OSaaS (Open Security as a Service) – SXC Sandbox 3.0",
+    role: "SXC Sandbox 3.0 Event",
+    description: "Built a privacy-focused security platform that automates vulnerability analysis and streamlines ethical hacking workflows using secure temporary workspaces.",
+    tags: ["React", "Firebase", "Express", "Security"],
+    icon: Lock,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
   {
     title: "5th Avenue - KEC Hack-a-lite 3.0",
     role: "KEC Hackathon",
