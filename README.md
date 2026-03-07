@@ -1,5 +1,7 @@
 # 🛡️ Cybersecurity Portfolio - Rajiv Shrestha
 
+🔗 **[View Live Portfolio](https://rajivshrestha07.com.np/)**
+
 A modern, responsive portfolio website showcasing my journey in cybersecurity, development, and security research. Built with a focus on clean design, performance, and security best practices.
 
 ## 👨‍💻 About Me
