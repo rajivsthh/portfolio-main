@@ -85,6 +85,34 @@ My mission is to contribute to making the digital world safer through continuous
    http://localhost:5173
    ```
 
+### Contact Form Backend Setup
+
+The contact form submits a `POST` request to the backend URL in your environment variables.
+
+If `VITE_CONTACT_FORM_ENDPOINT` is not set, the form automatically falls back to FormSubmit using the configured contact email. On first submission, FormSubmit sends an activation email.
+
+1. Copy `.env.example` to `.env`
+2. Set your backend endpoint:
+   ```bash
+   VITE_CONTACT_FORM_ENDPOINT=https://your-backend-domain.com/api/contact
+   ```
+3. Optional bearer token for protected APIs:
+   ```bash
+   VITE_CONTACT_FORM_AUTH_TOKEN=your-secret-token
+   ```
+
+Request body sent by the frontend:
+
+```json
+{
+  "name": "Your Name",
+  "email": "your@email.com",
+  "message": "Your message",
+  "source": "portfolio-contact-form",
+  "submittedAt": "2026-03-24T12:00:00.000Z"
+}
+```
+
 ### Build for Production
 
 ```bash

@@ -1,5 +1,7 @@
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { Mail, Phone, Linkedin, Github, Twitter, Send } from 'lucide-react';
 import LabsSection from '@/components/LabsSection';
+import { useToast } from '@/hooks/use-toast';
 
 const contactInfo = [
   {
@@ -22,7 +24,102 @@ const socialLinks = [
   { icon: Twitter, label: "Twitter", href: "https://twitter.com", color: "hover:text-[#1DA1F2]" },
 ];
 
+const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT;
+const CONTACT_FORM_AUTH_TOKEN = import.meta.env.VITE_CONTACT_FORM_AUTH_TOKEN;
+const DEFAULT_CONTACT_EMAIL = "rajivshresthaa23@gmail.com";
+
+const getSubmitEndpoint = () => {
+  if (CONTACT_FORM_ENDPOINT) {
+    return { endpoint: CONTACT_FORM_ENDPOINT, mode: "custom" as const };
+  }
+
+  return {
+    endpoint: `https://formsubmit.co/ajax/${DEFAULT_CONTACT_EMAIL}`,
+    mode: "formsubmit" as const,
+  };
+};
+
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setFormData((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const payload = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      message: formData.message.trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
+      toast({
+        title: "Missing fields",
+        description: "Please complete name, email, and message.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      const submitTarget = getSubmitEndpoint();
+
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+
+      if (submitTarget.mode === "custom" && CONTACT_FORM_AUTH_TOKEN) {
+        headers.Authorization = `Bearer ${CONTACT_FORM_AUTH_TOKEN}`;
+      }
+
+      const response = await fetch(submitTarget.endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          ...payload,
+          source: "portfolio-contact-form",
+          submittedAt: new Date().toISOString(),
+          _subject: `Portfolio Contact: ${payload.name}`,
+          _captcha: "true",
+          _template: "table",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setFormData({ name: "", email: "", message: "" });
+      toast({
+        title: "Message sent",
+        description:
+          submitTarget.mode === "formsubmit"
+            ? "Message submitted. Check your email inbox to activate FormSubmit on first use."
+            : "Thanks for reaching out. I'll get back to you soon.",
+      });
+    } catch (error) {
+      console.error("Contact form submission failed", error);
+      toast({
+        title: "Submission failed",
+        description: "The message could not be sent. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-8">
@@ -86,40 +183,55 @@ const ContactSection = () => {
               <div className="card-pro p-8">
                 <h3 className="text-lg font-semibold text-heading mb-6">Send a Message</h3>
                 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Name</label>
                     <input 
+                      name="name"
                       type="text"
                       placeholder="Your name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
                       className="input-pro"
                     />
                   </div>
                   <div>
                     <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Email</label>
                     <input 
+                      name="email"
                       type="email"
                       placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="input-pro"
                     />
                   </div>
                   <div>
                     <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Message</label>
                     <textarea 
+                      name="message"
                       placeholder="Your message..."
                       rows={4}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       className="input-pro resize-none"
                     />
                   </div>
                   <button 
                     type="submit"
+                    disabled={isSubmitting}
                     className="btn-primary w-full flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                   <p className="text-xs text-muted-foreground/70 text-center">
-                    Form submission requires backend integration
+                    {CONTACT_FORM_ENDPOINT
+                      ? "Form is connected to your backend endpoint"
+                      : "Using secure FormSubmit fallback. Set VITE_CONTACT_FORM_ENDPOINT to use your own backend."}
                   </p>
                 </form>
               </div>
