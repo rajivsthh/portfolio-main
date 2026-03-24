@@ -87,19 +87,24 @@ My mission is to contribute to making the digital world safer through continuous
 
 ### Contact Form Backend Setup
 
-The contact form submits a `POST` request to the backend URL in your environment variables.
-
-If `VITE_CONTACT_FORM_ENDPOINT` is not set, the form automatically falls back to FormSubmit using the configured contact email. On first submission, FormSubmit sends an activation email.
+This project includes a full Express backend (`server/index.js`) for handling contact form submissions.
 
 1. Copy `.env.example` to `.env`
-2. Set your backend endpoint:
+2. Configure SMTP credentials in `.env` (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, etc.)
+3. Run backend API:
    ```bash
-   VITE_CONTACT_FORM_ENDPOINT=https://your-backend-domain.com/api/contact
+   npm run server:dev
    ```
-3. Optional bearer token for protected APIs:
+4. Run frontend:
    ```bash
-   VITE_CONTACT_FORM_AUTH_TOKEN=your-secret-token
+   npm run dev
    ```
+
+During development, Vite proxies `/api/*` to `http://localhost:8787`.
+
+Production endpoint options:
+- Set `VITE_CONTACT_FORM_ENDPOINT=https://your-api-domain.com/api/contact`, or
+- Serve frontend and backend on the same domain and keep the default `/api/contact`.
 
 Request body sent by the frontend:
 
@@ -112,6 +117,10 @@ Request body sent by the frontend:
   "submittedAt": "2026-03-24T12:00:00.000Z"
 }
 ```
+
+Available backend routes:
+- `GET /api/health`
+- `POST /api/contact`
 
 ### Build for Production
 
@@ -136,6 +145,8 @@ bun run preview
 ```
 portfolio/
 ├── public/              # Static assets
+├── server/
+│   └── index.js         # Express backend for contact form API
 ├── src/
 │   ├── components/      # React components
 │   │   ├── ui/         # shadcn/ui components

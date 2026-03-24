@@ -26,18 +26,9 @@ const socialLinks = [
 
 const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT;
 const CONTACT_FORM_AUTH_TOKEN = import.meta.env.VITE_CONTACT_FORM_AUTH_TOKEN;
-const DEFAULT_CONTACT_EMAIL = "rajivshresthaa23@gmail.com";
+const DEFAULT_CONTACT_API_ENDPOINT = "/api/contact";
 
-const getSubmitEndpoint = () => {
-  if (CONTACT_FORM_ENDPOINT) {
-    return { endpoint: CONTACT_FORM_ENDPOINT, mode: "custom" as const };
-  }
-
-  return {
-    endpoint: `https://formsubmit.co/ajax/${DEFAULT_CONTACT_EMAIL}`,
-    mode: "formsubmit" as const,
-  };
-};
+const getSubmitEndpoint = () => CONTACT_FORM_ENDPOINT || DEFAULT_CONTACT_API_ENDPOINT;
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -73,26 +64,23 @@ const ContactSection = () => {
 
     try {
       setIsSubmitting(true);
-      const submitTarget = getSubmitEndpoint();
+      const endpoint = getSubmitEndpoint();
 
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
       };
 
-      if (submitTarget.mode === "custom" && CONTACT_FORM_AUTH_TOKEN) {
+      if (CONTACT_FORM_AUTH_TOKEN) {
         headers.Authorization = `Bearer ${CONTACT_FORM_AUTH_TOKEN}`;
       }
 
-      const response = await fetch(submitTarget.endpoint, {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers,
         body: JSON.stringify({
           ...payload,
           source: "portfolio-contact-form",
           submittedAt: new Date().toISOString(),
-          _subject: `Portfolio Contact: ${payload.name}`,
-          _captcha: "true",
-          _template: "table",
         }),
       });
 
@@ -103,10 +91,7 @@ const ContactSection = () => {
       setFormData({ name: "", email: "", message: "" });
       toast({
         title: "Message sent",
-        description:
-          submitTarget.mode === "formsubmit"
-            ? "Message submitted. Check your email inbox to activate FormSubmit on first use."
-            : "Thanks for reaching out. I'll get back to you soon.",
+        description: "Thanks for reaching out. I'll get back to you soon.",
       });
     } catch (error) {
       console.error("Contact form submission failed", error);
@@ -231,7 +216,7 @@ const ContactSection = () => {
                   <p className="text-xs text-muted-foreground/70 text-center">
                     {CONTACT_FORM_ENDPOINT
                       ? "Form is connected to your backend endpoint"
-                      : "Using secure FormSubmit fallback. Set VITE_CONTACT_FORM_ENDPOINT to use your own backend."}
+                      : "Form is connected to local backend (/api/contact)."}
                   </p>
                 </form>
               </div>
