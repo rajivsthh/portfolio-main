@@ -27,8 +27,26 @@ const socialLinks = [
 const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT;
 const CONTACT_FORM_AUTH_TOKEN = import.meta.env.VITE_CONTACT_FORM_AUTH_TOKEN;
 const DEFAULT_CONTACT_API_ENDPOINT = "/api/contact";
+const DEFAULT_CONTACT_EMAIL = "rajivshresthaa23@gmail.com";
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${DEFAULT_CONTACT_EMAIL}`;
 
 const getSubmitEndpoint = () => CONTACT_FORM_ENDPOINT || DEFAULT_CONTACT_API_ENDPOINT;
+
+const getErrorMessage = async (response: Response) => {
+  try {
+    const data = await response.json();
+    if (typeof data?.error === "string") {
+      return data.error;
+    }
+    if (typeof data?.hint === "string") {
+      return data.hint;
+    }
+  } catch {
+    return "The message could not be sent. Please try again.";
+  }
+
+  return "The message could not be sent. Please try again.";
+};
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -65,6 +83,7 @@ const ContactSection = () => {
     try {
       setIsSubmitting(true);
       const endpoint = getSubmitEndpoint();
+      const usingCustomBackend = Boolean(CONTACT_FORM_ENDPOINT);
 
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
@@ -84,20 +103,46 @@ const ContactSection = () => {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
+      if (response.ok) {
+        setFormData({ name: "", email: "", message: "" });
+        toast({
+          title: "Message sent",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        return;
       }
 
-      setFormData({ name: "", email: "", message: "" });
-      toast({
-        title: "Message sent",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
+      if (!usingCustomBackend) {
+        const fallbackResponse = await fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...payload,
+            _subject: `Portfolio Contact: ${payload.name}`,
+            _captcha: "true",
+            _template: "table",
+          }),
+        });
+
+        if (fallbackResponse.ok) {
+          setFormData({ name: "", email: "", message: "" });
+          toast({
+            title: "Message sent",
+            description: "Delivered via fallback while backend is unavailable.",
+          });
+          return;
+        }
+      }
+
+      const errorMessage = await getErrorMessage(response);
+      throw new Error(errorMessage);
     } catch (error) {
       console.error("Contact form submission failed", error);
       toast({
         title: "Submission failed",
-        description: "The message could not be sent. Please try again.",
+        description: error instanceof Error ? error.message : "The message could not be sent. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -216,7 +261,7 @@ const ContactSection = () => {
                   <p className="text-xs text-muted-foreground/70 text-center">
                     {CONTACT_FORM_ENDPOINT
                       ? "Form is connected to your backend endpoint"
-                      : "Form is connected to local backend (/api/contact)."}
+                      : "Primary: local backend (/api/contact), with fallback delivery enabled."}
                   </p>
                 </form>
               </div>
