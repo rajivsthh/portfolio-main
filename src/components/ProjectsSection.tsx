@@ -4,7 +4,7 @@ const projects = [
   {
     title: "AI HACKATHON 2026",
     role: "24-Hour Hackathon Project",
-    description: "NepalExplore is an AI-powered Nepal tourism platform using real-time crowd intelligence, tourist flow forecasting, and Claude AI to guide travelers away from overcrowded destinations and toward 800+ hidden gems across Nepal. Built in 24 hours, it includes a conversational trip planner, SOS safety system, budget estimator, and offline travel package, targeting the $13.8B global AI tourism market with no direct competitor in Nepal.",
+    description: "Built NepalExplore in 24 hours—an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
     tags: ["AI", "Tourism", "Forecasting", "React", "TypeScript", "Node.js"],
     icon: FileText,
     links: {
