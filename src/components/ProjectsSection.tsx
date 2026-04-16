@@ -91,15 +91,15 @@ const ProjectsSection = () => {
               <article key={index} className="card-pro p-6 flex flex-col group">
                 <div className="mb-5">
                   <div className="icon-container inline-block">
-                    <project.icon className="w-5 h-5 text-primary" />
+                    <project.icon className="w-5 h-5 text-foreground" />
                   </div>
                 </div>
 
                 <div className="flex-1 space-y-3">
-                  <h3 className="text-lg font-semibold text-heading group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-heading group-hover:text-foreground transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-primary text-sm font-medium">{project.role}</p>
+                  <p className="text-muted-foreground text-sm font-medium">{project.role}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>

@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-primary" />
+            <Shield className="w-5 h-5 text-foreground" />
             <span className="font-semibold text-heading">Rajiv Shrestha</span>
           </div>
 

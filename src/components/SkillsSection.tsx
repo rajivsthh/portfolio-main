@@ -46,7 +46,7 @@ const SkillsSection = () => {
               <article key={index} className="skill-card card-pro group">
                 <div className="skill-card-header">
                   <div className="icon-container">
-                    <category.icon className="w-5 h-5 text-primary" />
+                    <category.icon className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
                     <span className="skill-category-label">Category</span>

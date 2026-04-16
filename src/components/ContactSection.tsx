@@ -180,7 +180,7 @@ const ContactSection = () => {
                       className="contact-item group"
                     >
                       <div className="icon-container">
-                        <info.icon className="w-4 h-4 text-primary" />
+                        <info.icon className="w-4 h-4 text-foreground" />
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground uppercase tracking-wide">{info.label}</p>

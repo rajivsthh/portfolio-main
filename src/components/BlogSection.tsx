@@ -61,7 +61,7 @@ const BlogSection = () => {
                 {posts.map((post, index) => (
                   <article key={index} className="card-pro p-6 group">
                     <div className="mb-3 flex items-center gap-3">
-                      <FileText className="w-5 h-5 text-primary" />
+                      <FileText className="w-5 h-5 text-foreground" />
                       <div className="flex-1">
                         <h3 className="font-semibold text-heading">{post.title}</h3>
                         <span className="text-xs text-muted-foreground">{post.date}</span>
@@ -92,7 +92,7 @@ const BlogSection = () => {
                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                       {cat.topics.map((t, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-muted-foreground mt-1">•</span>
                           <span>{t}</span>
                         </li>
                       ))}

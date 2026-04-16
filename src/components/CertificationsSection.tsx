@@ -86,22 +86,22 @@ const CertificationsSection = () => {
             {certifications.map((cert, index) => (
               <div 
                 key={index} 
-                className={`card-pro p-6 text-center ${cert.highlight ? 'border-primary/20' : ''}`}
+                className={`card-pro p-6 text-center ${cert.highlight ? 'border-border' : ''}`}
               >
-                <div className={`mx-auto w-14 h-14 rounded-full flex items-center justify-center mb-5 ${cert.highlight ? 'bg-primary/10' : 'bg-muted/60'}`}>
+                <div className={`mx-auto w-14 h-14 rounded-full flex items-center justify-center mb-5 ${cert.highlight ? 'bg-secondary border border-border' : 'bg-muted/60'}`}>
                   {cert.img ? (
                     // show an inline thumbnail for images; PDFs will open via the link below
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={cert.img} alt={`${cert.title} certificate`} className="w-10 h-10 object-contain rounded" />
                   ) : (
-                    cert.icon && <cert.icon className={`w-6 h-6 ${cert.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                    cert.icon && <cert.icon className={`w-6 h-6 ${cert.highlight ? 'text-foreground' : 'text-muted-foreground'}`} />
                   )}
                 </div>
 
                 <h3 className="font-semibold text-heading mb-1">{cert.title}</h3>
                 <p className="text-muted-foreground text-sm mb-3">{cert.subtitle}</p>
                 <div className="flex items-center justify-center gap-3">
-                  <span className={`inline-block px-3 py-1.5 rounded-md text-sm ${cert.highlight ? 'bg-primary/10 text-primary font-medium' : 'bg-muted/60 text-muted-foreground'}`}>
+                  <span className={`inline-block px-3 py-1.5 rounded-md text-sm ${cert.highlight ? 'bg-muted text-foreground font-medium border border-border' : 'bg-muted/60 text-muted-foreground'}`}>
                     {cert.achievement}
                   </span>
                   {cert.link && (

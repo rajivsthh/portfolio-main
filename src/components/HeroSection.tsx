@@ -48,9 +48,9 @@ const HeroSection = () => {
           {/* Main Content */}
           <div className="hero-content">
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/15">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-primary text-sm font-medium">Open to Opportunities</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
+              <span className="w-2 h-2 bg-foreground rounded-full" />
+              <span className="text-foreground text-sm font-medium">Open to Opportunities</span>
             </div>
 
             {/* Heading */}
@@ -64,7 +64,7 @@ const HeroSection = () => {
                 <span className="terminal-cursor" aria-hidden="true">|</span>
               </p>
 
-              <p className="text-sm md:text-base text-primary/90 font-mono min-h-[1.5rem] typewriter-line">
+              <p className="text-sm md:text-base text-muted-foreground font-mono min-h-[1.5rem] typewriter-line">
                 {displayedRole}
                 <span className="typewriter-cursor" aria-hidden="true">|</span>
               </p>

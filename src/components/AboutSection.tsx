@@ -55,8 +55,8 @@ const AboutSection = () => {
             <div>
               <div className="card-pro p-8">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="p-2.5 rounded-lg bg-primary/10">
-                    <GraduationCap className="w-5 h-5 text-primary" />
+                  <div className="p-2.5 rounded-lg bg-secondary border border-border">
+                    <GraduationCap className="w-5 h-5 text-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold text-heading">Education</h3>
                 </div>
@@ -65,9 +65,9 @@ const AboutSection = () => {
                   {education.map((edu, index) => (
                     <div 
                       key={index} 
-                      className={`relative pl-6 border-l-2 ${edu.current ? 'border-primary' : 'border-border'}`}
+                      className={`relative pl-6 border-l-2 ${edu.current ? 'border-foreground/50' : 'border-border'}`}
                     >
-                      <div className={`absolute left-[-5px] top-1 w-2 h-2 rounded-full ${edu.current ? 'bg-primary' : 'bg-muted-foreground/40'}`} />
+                      <div className={`absolute left-[-5px] top-1 w-2 h-2 rounded-full ${edu.current ? 'bg-foreground/80' : 'bg-muted-foreground/40'}`} />
                       <div className="space-y-2">
                         <h4 className="font-medium text-foreground">{edu.degree}</h4>
                         <p className="text-muted-foreground text-sm flex items-center gap-2">
