@@ -1,35 +1,25 @@
-import { Shield, Globe, Terminal, Code, Brain, Search } from 'lucide-react';
+import { Network, ShieldCheck, Terminal, BookOpen } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: "Security & Networking",
-    icon: Shield,
-    skills: ["TCP/IP", "Web Security", "OWASP Top 10", "Network Protocols"],
+    title: 'Networking',
+    icon: Network,
+    skills: ['Wireshark', 'TCP/IP', 'Nmap'],
   },
   {
-    title: "Security Tools",
+    title: 'Web Security',
+    icon: ShieldCheck,
+    skills: ['Burp Suite', 'OWASP Top 10', 'SQLi/XSS'],
+  },
+  {
+    title: 'Tools & OS',
     icon: Terminal,
-    skills: ["Burp Suite", "Nmap", "Linux", "Bash Scripting"],
+    skills: ['Linux', 'Kali', 'Metasploit'],
   },
   {
-    title: "Web Development",
-    icon: Globe,
-    skills: ["HTML5", "CSS3", "JavaScript", "PHP", "Java"],
-  },
-  {
-    title: "Programming",
-    icon: Code,
-    skills: ["Python Basics", "Java", "Shell Scripting"],
-  },
-  {
-    title: "Soft Skills",
-    icon: Brain,
-    skills: ["Problem Solving", "Research & Analysis", "Critical Thinking"],
-  },
-  {
-    title: "Learning Focus",
-    icon: Search,
-    skills: ["Penetration Testing", "Vulnerability Assessment", "Security Auditing"],
+    title: 'Currently Learning',
+    icon: BookOpen,
+    skills: ['Python scripting', 'Active Directory'],
   },
 ];
 
@@ -51,27 +41,30 @@ const SkillsSection = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="skills-grid">
             {skillCategories.map((category, index) => (
-              <div key={index} className="card-pro p-6 group">
-                <div className="flex items-center gap-3 mb-5">
+              <article key={index} className="skill-card card-pro group">
+                <div className="skill-card-header">
                   <div className="icon-container">
                     <category.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-medium text-foreground">{category.title}</h3>
+                  <div>
+                    <span className="skill-category-label">Category</span>
+                    <h3 className="font-medium text-foreground">{category.title}</h3>
+                  </div>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="skills-pill-list">
                   {category.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="skill-tag"
+                      className="skills-pill"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

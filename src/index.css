@@ -308,6 +308,46 @@
     transform: translateX(4px);
   }
 
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .skill-card {
+    padding: var(--space-lg);
+  }
+
+  .skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .skill-category-label {
+    @apply section-label;
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .skills-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .skills-pill {
+    @apply text-sm text-muted-foreground bg-muted/60 border border-border/60;
+    border-radius: 9999px;
+    padding: var(--space-sm) var(--space-md);
+    transition: all 0.2s ease;
+  }
+
+  .skills-pill:hover {
+    @apply bg-primary/10 text-primary border-primary/25;
+  }
+
   .hero-section {
     padding-top: var(--space-2xl);
   }
