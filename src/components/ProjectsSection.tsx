@@ -4,7 +4,7 @@ const projects = [
   {
     title: "AI HACKATHON 2026",
     role: "24-Hour Hackathon Project",
-    description: "Built NepalExplore in 24 hours—an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
+    description: "Built NepalExplore in 24 hours an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
     tags: ["AI", "Tourism", "Forecasting", "React", "TypeScript", "Node.js"],
     icon: FileText,
     links: {

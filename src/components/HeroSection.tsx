@@ -1,6 +1,43 @@
+import { useEffect, useState } from 'react';
 import { Shield, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const HeroSection = () => {
+  const roles = ['Cybersecurity Learner', 'CTF Player', 'Network Explorer'];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayedRole, setDisplayedRole] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const isRoleComplete = displayedRole === currentRole;
+    const isRoleDeleted = displayedRole.length === 0;
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting && !isRoleComplete) {
+          setDisplayedRole(currentRole.slice(0, displayedRole.length + 1));
+          return;
+        }
+
+        if (!isDeleting && isRoleComplete) {
+          setIsDeleting(true);
+          return;
+        }
+
+        if (isDeleting && !isRoleDeleted) {
+          setDisplayedRole(currentRole.slice(0, displayedRole.length - 1));
+          return;
+        }
+
+        setIsDeleting(false);
+        setRoleIndex((previousIndex) => (previousIndex + 1) % roles.length);
+      },
+      !isDeleting && isRoleComplete ? 1500 : isDeleting ? 55 : 100
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayedRole, isDeleting, roleIndex]);
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Subtle Background */}
@@ -24,6 +61,12 @@ const HeroSection = () => {
 
               <p className="text-lg md:text-xl text-muted-foreground font-light">
                 Exploring the digital world, one system at a time.
+                <span className="terminal-cursor" aria-hidden="true">|</span>
+              </p>
+
+              <p className="text-sm md:text-base text-primary/90 font-mono min-h-[1.5rem] typewriter-line">
+                {displayedRole}
+                <span className="typewriter-cursor" aria-hidden="true">|</span>
               </p>
             </div>
 
