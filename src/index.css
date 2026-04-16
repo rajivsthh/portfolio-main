@@ -6,6 +6,13 @@
 
 @layer base {
   :root {
+    --color-bg: #0a0a0a;
+    --color-heading: #ffffff;
+    --color-surface: #1a1a1a;
+    --color-accent: #3b82f6;
+    --color-text: #e5e5e5;
+    --color-border-soft: #222222;
+
     --background: 0 0% 4%;
     --foreground: 0 0% 90%;
 
@@ -97,8 +104,10 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply font-sans antialiased;
     font-family: "Inter", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
   }
 
   code,
@@ -109,11 +118,11 @@
 
 @layer components {
   .shadow-soft {
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 1px 2px hsl(0 0% 0% / 0.2);
   }
 
   .shadow-medium {
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 8px 20px hsl(0 0% 0% / 0.3);
   }
 
   .text-gradient {
@@ -121,32 +130,36 @@
   }
 
   .text-heading {
-    color: hsl(var(--slate-heading));
+    color: var(--color-heading);
   }
 
   .grid-pattern {
     background-image:
-      linear-gradient(hsl(var(--border) / 0.2) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.2) 1px, transparent 1px);
+      linear-gradient(hsl(var(--border) / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.12) 1px, transparent 1px);
     background-size: 80px 80px;
   }
 
   /* Professional Card Component */
   .card-pro {
-    @apply bg-card border border-border/60 rounded-xl;
-    box-shadow: var(--shadow-soft);
+    @apply rounded-xl;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    box-shadow: 0 1px 2px hsl(0 0% 0% / 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-pro:hover {
-    @apply border-border;
-    box-shadow: var(--shadow-medium);
+    border-color: hsl(0 0% 18%);
+    box-shadow: 0 8px 20px hsl(0 0% 0% / 0.3);
     transform: translateY(-1px);
   }
 
   /* Icon Container with hover */
   .icon-container {
-    @apply p-2.5 rounded-lg bg-secondary border border-border;
+    @apply p-2.5 rounded-lg;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -158,13 +171,14 @@
 
   /* Button Components */
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg;
+    @apply text-primary-foreground font-medium px-6 py-3 rounded-lg;
+    background-color: var(--color-accent);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary:hover {
-    @apply bg-primary/90;
-    box-shadow: 0 4px 12px hsl(var(--primary) / 0.2);
+    background-color: #3477e6;
+    box-shadow: 0 4px 12px hsl(217 91% 60% / 0.2);
     transform: translateY(-1px);
   }
 
@@ -177,12 +191,14 @@
   }
 
   .btn-outline {
-    @apply border border-border text-foreground font-medium px-6 py-3 rounded-lg bg-transparent;
+    @apply text-foreground font-medium px-6 py-3 rounded-lg bg-transparent;
+    border: 1px solid var(--color-border-soft);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-outline:hover {
-    @apply bg-secondary border-muted-foreground/30;
+    background-color: var(--color-surface);
+    border-color: hsl(0 0% 20%);
     transform: translateY(-1px);
   }
 
@@ -196,17 +212,20 @@
 
   /* Section Label Component */
   .section-label {
-    @apply text-muted-foreground font-mono text-xs tracking-widest uppercase font-medium;
+    @apply font-mono text-xs tracking-widest uppercase font-medium;
+    color: hsl(var(--muted-foreground));
   }
 
   /* Social Icon Button */
   .social-icon {
-    @apply p-3 rounded-lg bg-secondary border border-border;
+    @apply p-3 rounded-lg;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .social-icon:hover {
-    @apply border-primary/40;
+    border-color: hsl(217 91% 60% / 0.45);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px hsl(0 0% 0% / 0.22);
   }
@@ -222,12 +241,13 @@
 
   /* Link hover state */
   .link-subtle {
-    @apply text-muted-foreground relative;
+    @apply relative;
+    color: hsl(var(--muted-foreground));
     transition: color 0.2s ease;
   }
 
   .link-subtle:hover {
-    @apply text-primary;
+    color: var(--color-accent);
   }
 
   .link-subtle:focus-visible {
@@ -236,18 +256,20 @@
 
   /* Link with underline animation */
   .link-animated {
-    @apply text-muted-foreground relative inline-flex items-center gap-1.5;
+    @apply relative inline-flex items-center gap-1.5;
+    color: hsl(var(--muted-foreground));
     transition: color 0.2s ease;
   }
 
   .link-animated::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-0 h-px bg-primary;
+    @apply absolute bottom-0 left-0 w-0 h-px;
+    background-color: var(--color-accent);
     transition: width 0.3s ease;
   }
 
   .link-animated:hover {
-    @apply text-primary;
+    color: var(--color-accent);
   }
 
   .link-animated:hover::after {
@@ -276,7 +298,9 @@
 
   /* Input focus state */
   .input-pro {
-    @apply w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground/70;
+    @apply w-full px-4 py-3 rounded-lg text-foreground placeholder:text-muted-foreground/70;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border-soft);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 

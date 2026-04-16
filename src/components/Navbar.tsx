@@ -17,12 +17,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 border-b border-[#222222]">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="p-1.5 rounded-lg bg-secondary border border-border">
+            <div className="p-1.5 rounded-lg bg-[#1A1A1A] border border-[#222222]">
               <Shield className="w-5 h-5 text-primary" />
             </div>
             <span className="font-semibold text-heading">
