@@ -67,15 +67,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(10,15,30,0.85)] backdrop-blur-[12px] border-b border-[#1e2d45]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.9)] backdrop-blur-[8px] border-b border-[#1a1a1a]">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="p-1.5 rounded-lg bg-[#111827] border border-[#1e2d45]">
-              <Shield className="w-5 h-5 text-primary" />
+            <div className="p-1.5 rounded-lg bg-[#141414] border border-[#222222]">
+              <Shield className="w-5 h-5 text-foreground" />
             </div>
-            <span className="font-semibold text-heading">
+            <span className="brand-font font-semibold text-heading">
               Rajiv<span className="text-muted-foreground">.sec</span>
             </span>
           </a>
@@ -102,7 +102,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-foreground transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >

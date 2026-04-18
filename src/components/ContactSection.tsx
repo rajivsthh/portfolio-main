@@ -184,7 +184,7 @@ const ContactSection = () => {
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground uppercase tracking-wide">{info.label}</p>
-                        <p className="text-foreground group-hover:text-primary transition-colors text-sm">{info.value}</p>
+                        <p className="text-foreground transition-colors text-sm">{info.value}</p>
                       </div>
                     </a>
                   ))}
@@ -253,7 +253,7 @@ const ContactSection = () => {
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full flex items-center justify-center gap-2"
+                    className="btn-outline w-full flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     {isSubmitting ? "Sending..." : "Send Message"}

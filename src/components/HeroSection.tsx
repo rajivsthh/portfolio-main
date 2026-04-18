@@ -121,7 +121,7 @@ const HeroSection = () => {
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
             <a 
               href="#about" 
-              className="text-muted-foreground/60 hover:text-primary transition-colors duration-300"
+              className="text-muted-foreground/60 hover:text-foreground transition-colors duration-300"
               aria-label="Scroll to about section"
             >
               <ChevronDown className="w-6 h-6 animate-bounce" />

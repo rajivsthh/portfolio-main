@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <Shield className="w-5 h-5 text-foreground" />
-            <span className="font-semibold text-heading">Rajiv Shrestha</span>
+            <span className="brand-font font-semibold text-heading">Rajiv Shrestha</span>
           </div>
 
           {/* Social Links */}

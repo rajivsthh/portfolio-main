@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +6,40 @@
 
 @layer base {
   :root {
-    --color-bg: #0a0f1e;
-    --color-heading: #f1f5f9;
-    --color-surface: #111827;
-    --color-accent: #3b82f6;
-    --color-text: #f1f5f9;
-    --color-border-soft: #1e2d45;
+    --color-bg: #080808;
+    --color-heading: #ffffff;
+    --color-surface: #141414;
+    --color-accent: #00c2a8;
+    --color-text: #a3a3a3;
+    --color-border-soft: #222222;
 
-    --background: 224 50% 8%;
-    --foreground: 210 40% 96%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 172 100% 38%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 221 48% 10%;
-    --secondary-foreground: 210 40% 96%;
+    --secondary: 0 0% 6%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 221 48% 10%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 6%;
+    --muted-foreground: 0 0% 32%;
 
-    --accent: 190 95% 43%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 172 100% 38%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 40% 19%;
-    --input: 216 40% 19%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 172 100% 38%;
 
     --radius: 0.625rem;
 
@@ -50,44 +50,44 @@
     --space-2xl: 64px;
 
     /* Professional theme tokens */
-    --slate-heading: 210 40% 96%;
-    --calm-blue: 217 91% 60%;
-    --calm-blue-light: 190 95% 43%;
-    --surface-elevated: 222 47% 11%;
+    --slate-heading: 0 0% 100%;
+    --calm-blue: 172 100% 38%;
+    --calm-blue-light: 172 100% 38%;
+    --surface-elevated: 0 0% 8%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
     --shadow-medium: 0 6px 18px hsl(0 0% 0% / 0.3);
   }
 
   .dark {
-    --background: 224 50% 8%;
-    --foreground: 210 40% 96%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 172 100% 38%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 221 48% 10%;
-    --secondary-foreground: 210 40% 96%;
+    --secondary: 0 0% 6%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 221 48% 10%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 6%;
+    --muted-foreground: 0 0% 32%;
 
-    --accent: 190 95% 43%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 172 100% 38%;
+    --accent-foreground: 0 0% 0%;
 
-    --border: 216 40% 19%;
-    --input: 216 40% 19%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 172 100% 38%;
 
-    --navy: 224 50% 8%;
-    --navy-light: 221 48% 10%;
-    --surface-elevated: 222 47% 11%;
+    --navy: 0 0% 3%;
+    --navy-light: 0 0% 6%;
+    --surface-elevated: 0 0% 8%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
     --shadow-medium: 0 6px 18px hsl(0 0% 0% / 0.3);
@@ -105,25 +105,26 @@
 
   body {
     @apply font-sans antialiased;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Instrument Sans", sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
   }
 
   p,
   nav {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Instrument Sans", sans-serif;
   }
 
   h1,
   h2,
   h3 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 700;
   }
 
   code,
   .font-mono {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Instrument Sans", sans-serif;
   }
 }
 
@@ -161,8 +162,8 @@
   }
 
   .card-pro:hover {
-    border-color: #334155;
-    box-shadow: 0 8px 20px hsl(223 35% 10% / 0.3);
+    border-color: #2b2b2b;
+    box-shadow: 0 8px 20px hsl(0 0% 0% / 0.32);
     transform: translateY(-1px);
   }
 
@@ -182,14 +183,18 @@
 
   /* Button Components */
   .btn-primary {
-    @apply text-primary-foreground font-medium px-6 py-3 rounded-lg;
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    @apply px-6 py-3;
+    background-color: #00c2a8;
+    color: #000000;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #00c2a8;
     transition: all 0.25s ease;
   }
 
   .btn-primary:hover {
-    background: #1e40af;
-    box-shadow: 0 6px 14px hsl(217 91% 60% / 0.2);
+    background-color: #00b19a;
+    box-shadow: none;
     transform: translateY(-1px);
   }
 
@@ -202,14 +207,16 @@
   }
 
   .btn-outline {
-    @apply text-foreground font-medium px-6 py-3 rounded-lg bg-transparent;
-    border: 1px solid #334155;
+    @apply px-6 py-3 rounded-lg bg-transparent;
+    color: #ffffff;
+    font-weight: 500;
+    border: 1px solid #333333;
     transition: all 0.25s ease;
   }
 
   .btn-outline:hover {
-    background-color: #1e293b;
-    border-color: #334155;
+    background-color: transparent;
+    border-color: #00c2a8;
     transform: translateY(-1px);
   }
 
@@ -223,7 +230,7 @@
 
   /* Section Label Component */
   .section-label {
-    @apply font-mono text-xs tracking-widest uppercase font-medium;
+    @apply text-xs tracking-widest uppercase font-medium;
     color: hsl(var(--muted-foreground));
   }
 
@@ -236,9 +243,9 @@
   }
 
   .social-icon:hover {
-    border-color: #3b82f6;
+    border-color: #00c2a8;
     transform: translateY(-1px);
-    box-shadow: 0 0 12px rgb(59 130 246 / 0.3);
+    box-shadow: 0 0 8px rgb(0 194 168 / 0.4);
   }
 
   .social-icon svg {
@@ -247,22 +254,22 @@
   }
 
   .social-icon:hover svg {
-    @apply text-primary;
+    @apply text-foreground;
   }
 
   /* Link hover state */
   .link-subtle {
     @apply relative;
-    color: #94a3b8;
+    color: #737373;
     transition: all 0.25s ease;
   }
 
   .link-subtle:hover {
-    color: #f1f5f9;
+    color: #ffffff;
   }
 
   .link-subtle:focus-visible {
-    @apply outline-none text-primary;
+    @apply outline-none text-foreground;
   }
 
   /* Link with underline animation */
@@ -275,12 +282,12 @@
   .link-animated::after {
     content: "";
     @apply absolute bottom-0 left-0 w-0 h-px;
-    background-color: #06b6d4;
+    background-color: #737373;
     transition: width 0.25s ease;
   }
 
   .link-animated:hover {
-    color: #06b6d4;
+    color: #ffffff;
   }
 
   .link-animated:hover::after {
@@ -331,14 +338,18 @@
   }
 
   .badge-opportunity {
-    background-color: #1e3a5f;
-    border: 1px solid #1e2d45;
-    color: #60a5fa;
+    background-color: #1a1a1a;
+    border: 1px solid #00c2a8;
+    color: #00c2a8;
     transition: all 0.25s ease;
   }
 
   .badge-opportunity-dot {
-    background-color: #22d3ee;
+    background-color: #00c2a8;
+  }
+
+  .brand-font {
+    font-family: "IBM Plex Mono", monospace;
   }
 
   .contact-item:hover {
@@ -402,20 +413,9 @@
   }
 
   .hero-heading-group {
-    position: relative;
-    isolation: isolate;
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-  }
-
-  .hero-heading-group::before {
-    content: "";
-    position: absolute;
-    inset: -20% -10%;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse at center, rgb(59 130 246 / 0.08) 0%, transparent 70%);
   }
 
   .hero-description {
