@@ -66,7 +66,7 @@ const LabsSection = ({ variant = 'full', className = '' }: LabsSectionProps) => 
   }
 
   return (
-    <section id="labs" className="py-24 lg:py-32">
+    <section id="lab" className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 space-y-4">

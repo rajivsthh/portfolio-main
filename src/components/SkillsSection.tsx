@@ -49,7 +49,6 @@ const SkillsSection = () => {
                     <category.icon className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <span className="skill-category-label">Category</span>
                     <h3 className="font-medium text-foreground">{category.title}</h3>
                   </div>
                 </div>

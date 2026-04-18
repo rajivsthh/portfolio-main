@@ -1,5 +1,6 @@
 import { Shield, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState, type MouseEvent } from 'react';
+import { cn } from '@/lib/utils';
 
 interface NavLink {
   name: string;
@@ -10,11 +11,60 @@ const navLinks: NavLink[] = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Lab', href: '#lab' },
   { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#about');
+
+  useEffect(() => {
+    const initialHash = window.location.hash;
+    if (navLinks.some((link) => link.href === initialHash)) {
+      setActiveSection(initialHash);
+    }
+
+    const sections = navLinks
+      .map((link) => document.getElementById(link.href.slice(1)))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (!sections.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections[0]) {
+          setActiveSection(`#${visibleSections[0].target.id}`);
+        }
+      },
+      {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0.15, 0.3, 0.5, 0.75],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const targetSection = document.querySelector(href);
+
+    if (targetSection instanceof HTMLElement) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(href);
+    }
+
+    setIsOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 border-b border-[#222222]">
@@ -36,7 +86,11 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="link-subtle text-sm font-medium"
+                onClick={handleNavClick(link.href)}
+                className={cn(
+                  'link-subtle text-sm font-medium',
+                  activeSection === link.href && 'text-primary',
+                )}
               >
                 {link.name}
               </a>
@@ -64,8 +118,11 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="link-subtle text-sm font-medium py-3 px-2 rounded-lg hover:bg-muted/50"
-                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    'link-subtle text-sm font-medium py-3 px-2 rounded-lg hover:bg-muted/50',
+                    activeSection === link.href && 'text-primary',
+                  )}
+                  onClick={handleNavClick(link.href)}
                 >
                   {link.name}
                 </a>
