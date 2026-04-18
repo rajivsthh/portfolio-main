@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    --color-bg: #080808;
-    --color-heading: #ffffff;
+    --color-bg: #111111;
+    --color-heading: #e0e0e0;
     --color-surface: #141414;
-    --color-accent: #00c2a8;
-    --color-text: #a3a3a3;
+    --color-accent: #888888;
+    --color-text: #777777;
     --color-border-soft: #222222;
 
-    --background: 0 0% 3%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 83%;
 
     --card: 0 0% 8%;
     --card-foreground: 0 0% 100%;
@@ -22,24 +22,24 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 172 100% 38%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 0 0% 83%;
+    --primary-foreground: 0 0% 7%;
 
     --secondary: 0 0% 6%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 83%;
 
     --muted: 0 0% 6%;
-    --muted-foreground: 0 0% 32%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 172 100% 38%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 0% 53%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 13%;
     --input: 0 0% 13%;
-    --ring: 172 100% 38%;
+    --ring: 0 0% 53%;
 
     --radius: 0.625rem;
 
@@ -50,9 +50,9 @@
     --space-2xl: 64px;
 
     /* Professional theme tokens */
-    --slate-heading: 0 0% 100%;
-    --calm-blue: 172 100% 38%;
-    --calm-blue-light: 172 100% 38%;
+    --slate-heading: 0 0% 88%;
+    --calm-blue: 0 0% 53%;
+    --calm-blue-light: 0 0% 53%;
     --surface-elevated: 0 0% 8%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
@@ -69,21 +69,21 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 172 100% 38%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 0 0% 83%;
+    --primary-foreground: 0 0% 7%;
 
     --secondary: 0 0% 6%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 83%;
 
     --muted: 0 0% 6%;
-    --muted-foreground: 0 0% 32%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 172 100% 38%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 0% 53%;
+    --accent-foreground: 0 0% 7%;
 
     --border: 0 0% 13%;
     --input: 0 0% 13%;
-    --ring: 172 100% 38%;
+    --ring: 0 0% 53%;
 
     --navy: 0 0% 3%;
     --navy-light: 0 0% 6%;
@@ -137,18 +137,12 @@
     box-shadow: 0 8px 20px hsl(0 0% 0% / 0.3);
   }
 
-  .text-gradient {
-    color: hsl(var(--slate-heading));
-  }
-
   .text-heading {
     color: var(--color-heading);
   }
 
   .grid-pattern {
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.12) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.12) 1px, transparent 1px);
+    background-image: none;
     background-size: 80px 80px;
   }
 
@@ -162,7 +156,7 @@
   }
 
   .card-pro:hover {
-    border-color: #2b2b2b;
+    border-color: #2a2a2a;
     box-shadow: 0 8px 20px hsl(0 0% 0% / 0.32);
     transform: translateY(-1px);
   }
@@ -184,16 +178,17 @@
   /* Button Components */
   .btn-primary {
     @apply px-6 py-3;
-    background-color: #00c2a8;
-    color: #000000;
+    background-color: #d4d4d4;
+    color: #111111;
     font-weight: 600;
     border-radius: 6px;
-    border: 1px solid #00c2a8;
+    border: 1px solid #d4d4d4;
     transition: all 0.25s ease;
   }
 
   .btn-primary:hover {
-    background-color: #00b19a;
+    background-color: #d4d4d4;
+    border-color: #d4d4d4;
     box-shadow: none;
     transform: translateY(-1px);
   }
@@ -208,7 +203,7 @@
 
   .btn-outline {
     @apply px-6 py-3 rounded-lg bg-transparent;
-    color: #ffffff;
+    color: #cccccc;
     font-weight: 500;
     border: 1px solid #333333;
     transition: all 0.25s ease;
@@ -216,7 +211,7 @@
 
   .btn-outline:hover {
     background-color: transparent;
-    border-color: #00c2a8;
+    border-color: #555555;
     transform: translateY(-1px);
   }
 
@@ -237,24 +232,24 @@
   /* Social Icon Button */
   .social-icon {
     @apply p-3 rounded-lg;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
+    background-color: #1a1a1a;
+    border: 1px solid #252525;
     transition: all 0.25s ease;
   }
 
   .social-icon:hover {
-    border-color: #00c2a8;
+    border-color: #555555;
     transform: translateY(-1px);
-    box-shadow: 0 0 8px rgb(0 194 168 / 0.4);
+    box-shadow: none;
   }
 
   .social-icon svg {
-    @apply text-muted-foreground;
+    color: #777777;
     transition: color 0.3s ease;
   }
 
   .social-icon:hover svg {
-    @apply text-foreground;
+    color: #d4d4d4;
   }
 
   /* Link hover state */
@@ -282,7 +277,7 @@
   .link-animated::after {
     content: "";
     @apply absolute bottom-0 left-0 w-0 h-px;
-    background-color: #737373;
+    background-color: #555555;
     transition: width 0.25s ease;
   }
 
@@ -338,14 +333,14 @@
   }
 
   .badge-opportunity {
-    background-color: #1a1a1a;
-    border: 1px solid #00c2a8;
-    color: #00c2a8;
+    background-color: #1c1c1c;
+    border: 1px solid #2e2e2e;
+    color: #999999;
     transition: all 0.25s ease;
   }
 
   .badge-opportunity-dot {
-    background-color: #00c2a8;
+    background-color: #888888;
   }
 
   .brand-font {
@@ -462,10 +457,6 @@
     animation: float 6s ease-in-out infinite;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-
   .animate-fade-up {
     animation: fade-up 0.6s ease-out forwards;
   }
@@ -488,10 +479,10 @@
 @keyframes pulse-soft {
   0%,
   100% {
-    box-shadow: 0 4px 20px hsl(210, 100%, 45%, 0.15);
+    box-shadow: 0 4px 20px hsl(0 0% 50% / 0.1);
   }
   50% {
-    box-shadow: 0 8px 30px hsl(210, 100%, 45%, 0.25);
+    box-shadow: 0 8px 30px hsl(0 0% 50% / 0.16);
   }
 }
 
@@ -528,16 +519,6 @@
   }
 }
 
-@keyframes typewriter-glow {
-  0%,
-  100% {
-    opacity: 0.85;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 .terminal-cursor,
 .typewriter-cursor {
   display: inline-block;
@@ -548,5 +529,5 @@
 
 .typewriter-line {
   letter-spacing: 0.01em;
-  animation: typewriter-glow 2.8s ease-in-out infinite;
+  animation: none;
 }

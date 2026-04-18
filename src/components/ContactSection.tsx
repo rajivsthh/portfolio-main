@@ -19,9 +19,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/rajivsthh/", color: "hover:text-[#0A66C2]" },
-  { icon: Github, label: "GitHub", href: "https://github.com/rajivsthh", color: "hover:text-foreground" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com", color: "hover:text-[#1DA1F2]" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/rajivsthh/" },
+  { icon: Github, label: "GitHub", href: "https://github.com/rajivsthh" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
 ];
 
 const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT;

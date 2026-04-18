@@ -56,10 +56,10 @@ const HeroSection = () => {
             {/* Heading */}
             <div className="hero-heading-group">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight tracking-tight">
-                Hi, I'm <span className="text-gradient">Rajiv Shrestha</span>
+                Hi, I'm <span className="text-heading">Rajiv Shrestha</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground font-light">
+              <p className="text-lg md:text-xl text-[#666666] font-light">
                 Exploring the digital world, one system at a time.
                 <span className="terminal-cursor" aria-hidden="true">|</span>
               </p>
@@ -71,7 +71,7 @@ const HeroSection = () => {
             </div>
 
             {/* Description */}
-            <p className="hero-description text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <p className="hero-description text-[#777777] max-w-xl mx-auto leading-relaxed">
               Cybersecurity learner focused on networks, web applications, and system vulnerabilities. 
               Building practical security skills through hands-on experimentation.
             </p>

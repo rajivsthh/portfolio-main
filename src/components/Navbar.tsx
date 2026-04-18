@@ -67,13 +67,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.9)] backdrop-blur-[8px] border-b border-[#1a1a1a]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.92)] backdrop-blur-[8px] border-b border-[#1a1a1a]">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
             <div className="p-1.5 rounded-lg bg-[#141414] border border-[#222222]">
-              <Shield className="w-5 h-5 text-foreground" />
+              <Shield className="w-5 h-5 text-[#888888]" />
             </div>
             <span className="brand-font font-semibold text-heading">
               Rajiv<span className="text-muted-foreground">.sec</span>
@@ -89,7 +89,7 @@ const Navbar = () => {
                 onClick={handleNavClick(link.href)}
                 className={cn(
                   'link-subtle text-sm font-medium',
-                  activeSection === link.href && 'text-primary',
+                  activeSection === link.href && 'text-[#d4d4d4]',
                 )}
               >
                 {link.name}
@@ -120,7 +120,7 @@ const Navbar = () => {
                   href={link.href}
                   className={cn(
                     'link-subtle text-sm font-medium py-3 px-2 rounded-lg hover:bg-muted/50',
-                    activeSection === link.href && 'text-primary',
+                    activeSection === link.href && 'text-[#d4d4d4]',
                   )}
                   onClick={handleNavClick(link.href)}
                 >
