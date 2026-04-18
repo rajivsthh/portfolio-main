@@ -9,7 +9,7 @@
     --color-bg: #0a0a0a;
     --color-heading: #ffffff;
     --color-surface: #1a1a1a;
-    --color-accent: #3b82f6;
+    --color-accent: #22c55e;
     --color-text: #e5e5e5;
     --color-border-soft: #222222;
 
@@ -22,7 +22,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 90%;
 
-    --primary: 217 91% 60%;
+    --primary: 142 71% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -31,7 +31,7 @@
     --muted: 0 0% 13%;
     --muted-foreground: 0 0% 72%;
 
-    --accent: 217 91% 60%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -39,7 +39,7 @@
 
     --border: 0 0% 13%;
     --input: 0 0% 13%;
-    --ring: 217 91% 60%;
+    --ring: 142 71% 45%;
 
     --radius: 0.625rem;
 
@@ -51,8 +51,8 @@
 
     /* Professional theme tokens */
     --slate-heading: 0 0% 100%;
-    --calm-blue: 217 91% 60%;
-    --calm-blue-light: 217 91% 65%;
+    --calm-blue: 142 71% 45%;
+    --calm-blue-light: 142 63% 50%;
     --surface-elevated: 0 0% 10%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
@@ -69,7 +69,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 90%;
 
-    --primary: 217 91% 60%;
+    --primary: 142 71% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -78,12 +78,12 @@
     --muted: 0 0% 13%;
     --muted-foreground: 0 0% 72%;
 
-    --accent: 217 91% 60%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
     --border: 0 0% 13%;
     --input: 0 0% 13%;
-    --ring: 217 91% 60%;
+    --ring: 142 71% 45%;
 
     --navy: 0 0% 10%;
     --navy-light: 0 0% 14%;
@@ -177,8 +177,8 @@
   }
 
   .btn-primary:hover {
-    background-color: #3477e6;
-    box-shadow: 0 4px 12px hsl(217 91% 60% / 0.2);
+    background-color: #1ea851;
+    box-shadow: 0 4px 10px hsl(142 71% 45% / 0.15);
     transform: translateY(-1px);
   }
 
@@ -225,7 +225,7 @@
   }
 
   .social-icon:hover {
-    border-color: hsl(217 91% 60% / 0.45);
+    border-color: hsl(142 71% 45% / 0.4);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px hsl(0 0% 0% / 0.22);
   }
