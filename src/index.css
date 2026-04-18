@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +6,40 @@
 
 @layer base {
   :root {
-    --color-bg: #0a0a0a;
-    --color-heading: #ffffff;
-    --color-surface: #1a1a1a;
-    --color-accent: #22c55e;
-    --color-text: #e5e5e5;
-    --color-border-soft: #222222;
+    --color-bg: #0a0f1e;
+    --color-heading: #f1f5f9;
+    --color-surface: #111827;
+    --color-accent: #3b82f6;
+    --color-text: #f1f5f9;
+    --color-border-soft: #1e2d45;
 
-    --background: 0 0% 4%;
-    --foreground: 0 0% 90%;
+    --background: 224 50% 8%;
+    --foreground: 210 40% 96%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 90%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 142 71% 45%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 221 48% 10%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 72%;
+    --muted: 221 48% 10%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 142 71% 45%;
+    --accent: 190 95% 43%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 13%;
-    --input: 0 0% 13%;
-    --ring: 142 71% 45%;
+    --border: 216 40% 19%;
+    --input: 216 40% 19%;
+    --ring: 217 91% 60%;
 
     --radius: 0.625rem;
 
@@ -50,44 +50,44 @@
     --space-2xl: 64px;
 
     /* Professional theme tokens */
-    --slate-heading: 0 0% 100%;
-    --calm-blue: 142 71% 45%;
-    --calm-blue-light: 142 63% 50%;
-    --surface-elevated: 0 0% 10%;
+    --slate-heading: 210 40% 96%;
+    --calm-blue: 217 91% 60%;
+    --calm-blue-light: 190 95% 43%;
+    --surface-elevated: 222 47% 11%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
     --shadow-medium: 0 6px 18px hsl(0 0% 0% / 0.3);
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 90%;
+    --background: 224 50% 8%;
+    --foreground: 210 40% 96%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 90%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 142 71% 45%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 221 48% 10%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 72%;
+    --muted: 221 48% 10%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 142 71% 45%;
+    --accent: 190 95% 43%;
     --accent-foreground: 0 0% 100%;
 
-    --border: 0 0% 13%;
-    --input: 0 0% 13%;
-    --ring: 142 71% 45%;
+    --border: 216 40% 19%;
+    --input: 216 40% 19%;
+    --ring: 217 91% 60%;
 
-    --navy: 0 0% 10%;
-    --navy-light: 0 0% 14%;
-    --surface-elevated: 0 0% 10%;
+    --navy: 224 50% 8%;
+    --navy-light: 221 48% 10%;
+    --surface-elevated: 222 47% 11%;
     --gradient-pro: none;
     --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.22);
     --shadow-medium: 0 6px 18px hsl(0 0% 0% / 0.3);
@@ -105,9 +105,20 @@
 
   body {
     @apply font-sans antialiased;
-    font-family: "Inter", sans-serif;
+    font-family: "DM Sans", sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
+  }
+
+  p,
+  nav {
+    font-family: "DM Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Space Grotesk", sans-serif;
   }
 
   code,
@@ -146,12 +157,12 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);
     box-shadow: 0 1px 2px hsl(0 0% 0% / 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
   }
 
   .card-pro:hover {
-    border-color: hsl(0 0% 18%);
-    box-shadow: 0 8px 20px hsl(0 0% 0% / 0.3);
+    border-color: #334155;
+    box-shadow: 0 8px 20px hsl(223 35% 10% / 0.3);
     transform: translateY(-1px);
   }
 
@@ -160,7 +171,7 @@
     @apply p-2.5 rounded-lg;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
   }
 
   .group:hover .icon-container,
@@ -172,13 +183,13 @@
   /* Button Components */
   .btn-primary {
     @apply text-primary-foreground font-medium px-6 py-3 rounded-lg;
-    background-color: var(--color-accent);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transition: all 0.25s ease;
   }
 
   .btn-primary:hover {
-    background-color: #1ea851;
-    box-shadow: 0 4px 10px hsl(142 71% 45% / 0.15);
+    background: #1e40af;
+    box-shadow: 0 6px 14px hsl(217 91% 60% / 0.2);
     transform: translateY(-1px);
   }
 
@@ -192,13 +203,13 @@
 
   .btn-outline {
     @apply text-foreground font-medium px-6 py-3 rounded-lg bg-transparent;
-    border: 1px solid var(--color-border-soft);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #334155;
+    transition: all 0.25s ease;
   }
 
   .btn-outline:hover {
-    background-color: var(--color-surface);
-    border-color: hsl(0 0% 20%);
+    background-color: #1e293b;
+    border-color: #334155;
     transform: translateY(-1px);
   }
 
@@ -221,13 +232,13 @@
     @apply p-3 rounded-lg;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
   }
 
   .social-icon:hover {
-    border-color: hsl(142 71% 45% / 0.4);
+    border-color: #3b82f6;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px hsl(0 0% 0% / 0.22);
+    box-shadow: 0 0 12px rgb(59 130 246 / 0.3);
   }
 
   .social-icon svg {
@@ -242,12 +253,12 @@
   /* Link hover state */
   .link-subtle {
     @apply relative;
-    color: hsl(var(--muted-foreground));
-    transition: color 0.2s ease;
+    color: #94a3b8;
+    transition: all 0.25s ease;
   }
 
   .link-subtle:hover {
-    color: var(--color-accent);
+    color: #f1f5f9;
   }
 
   .link-subtle:focus-visible {
@@ -258,18 +269,18 @@
   .link-animated {
     @apply relative inline-flex items-center gap-1.5;
     color: hsl(var(--muted-foreground));
-    transition: color 0.2s ease;
+    transition: all 0.25s ease;
   }
 
   .link-animated::after {
     content: "";
     @apply absolute bottom-0 left-0 w-0 h-px;
-    background-color: var(--color-accent);
-    transition: width 0.3s ease;
+    background-color: #06b6d4;
+    transition: width 0.25s ease;
   }
 
   .link-animated:hover {
-    color: var(--color-accent);
+    color: #06b6d4;
   }
 
   .link-animated:hover::after {
@@ -279,7 +290,7 @@
   /* Skill tag hover */
   .skill-tag {
     @apply px-3 py-1.5 text-sm bg-muted/60 rounded-md text-muted-foreground;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
   }
 
   .skill-tag:hover {
@@ -289,7 +300,7 @@
   /* Project tag */
   .project-tag {
     @apply px-2.5 py-1 text-xs bg-muted/60 rounded text-muted-foreground;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
   }
 
   .project-tag:hover {
@@ -301,7 +312,7 @@
     @apply w-full px-4 py-3 rounded-lg text-foreground placeholder:text-muted-foreground/70;
     background-color: var(--color-bg);
     border: 1px solid var(--color-border-soft);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
   }
 
   .input-pro:hover {
@@ -316,7 +327,18 @@
   /* Contact info item */
   .contact-item {
     @apply flex items-center gap-4;
-    transition: transform 0.2s ease;
+    transition: all 0.25s ease;
+  }
+
+  .badge-opportunity {
+    background-color: #1e3a5f;
+    border: 1px solid #1e2d45;
+    color: #60a5fa;
+    transition: all 0.25s ease;
+  }
+
+  .badge-opportunity-dot {
+    background-color: #22d3ee;
   }
 
   .contact-item:hover {
@@ -380,9 +402,20 @@
   }
 
   .hero-heading-group {
+    position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+  }
+
+  .hero-heading-group::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgb(59 130 246 / 0.08) 0%, transparent 70%);
   }
 
   .hero-description {
@@ -413,6 +446,14 @@
       padding-left: var(--space-xl);
       padding-right: var(--space-xl);
     }
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    transition: all 0.25s ease;
   }
 }
 

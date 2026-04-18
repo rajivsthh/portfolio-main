@@ -48,9 +48,9 @@ const HeroSection = () => {
           {/* Main Content */}
           <div className="hero-content">
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
-              <span className="w-2 h-2 bg-foreground rounded-full" />
-              <span className="text-foreground text-sm font-medium">Open to Opportunities</span>
+            <div className="badge-opportunity inline-flex items-center gap-2 px-4 py-2 rounded-full">
+              <span className="badge-opportunity-dot w-2 h-2 rounded-full" />
+              <span className="text-sm font-medium">Open to Opportunities</span>
             </div>
 
             {/* Heading */}
