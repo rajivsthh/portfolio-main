@@ -1,6 +1,17 @@
-import { Shield, FileText, GraduationCap, Hammer, Lock, ExternalLink, Github } from 'lucide-react';
+import { Shield, FileText, GraduationCap, Hammer, Lock, ExternalLink, Github, Boxes } from 'lucide-react';
 
 const projects = [
+  {
+    title: "Warehouse Navigator",
+    role: "Full-Stack Web App",
+    description: "Built Warehouse Navigator, a full-stack warehouse consignment management web app with React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Firebase Auth, and Supabase for secure inventory, receipts, filtering, and reporting workflows.",
+    tags: ["React", "TypeScript", "Supabase", "Firebase", "Tailwind", "Full-Stack"],
+    icon: Boxes,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
   {
     title: "AI HACKATHON 2026",
     role: "24-Hour Hackathon Project",
