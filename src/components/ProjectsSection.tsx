@@ -57,6 +57,17 @@ const projects = [
     },
   },
   {
+    title: "NASA Hall of Fame",
+    role: "Contribution",
+    description: "Recognized in the NASA Hall of Fame as part of my contributions, highlighting work that reflects technical impact and commitment.",
+    tags: ["NASA", "Recognition", "Contribution"],
+    icon: Shield,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
+  {
     title: "Mitra Smart",
     role: "100x Nepal Hackathon 2025",
     description: "AI-powered document validation and smart form-filling solution designed to streamline document processing with intelligent automation.",
@@ -89,7 +100,7 @@ const ProjectsSection = () => {
           <div className="text-center mb-16 space-y-4">
             <span className="section-label">My Work</span>
             <h2 className="text-3xl md:text-4xl font-bold text-heading tracking-tight">
-              Featured Projects
+              Featured Projects & Contributions
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Hands-on projects and contributions showcasing my journey in cybersecurity and development.
