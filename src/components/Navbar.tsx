@@ -67,16 +67,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.92)] backdrop-blur-[8px] border-b border-[#1a1a1a]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5">
-            <div className="p-1.5 rounded-lg bg-[#141414] border border-[#222222]">
-              <Shield className="w-5 h-5 text-[#888888]" />
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="p-2 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/[0.08] transition-colors">
+              <Shield className="w-5 h-5 text-white/80" />
             </div>
-            <span className="brand-font font-semibold text-heading">
-              Rajiv<span className="text-muted-foreground">.sec</span>
+            <span className="brand-font font-semibold text-lg text-white">
+              Rajiv<span className="text-white/40">.sec</span>
             </span>
           </a>
 
@@ -88,14 +88,14 @@ const Navbar = () => {
                 href={link.href}
                 onClick={handleNavClick(link.href)}
                 className={cn(
-                  'link-subtle text-sm font-medium',
-                  activeSection === link.href && 'text-[#d4d4d4]',
+                  'text-sm font-medium transition-colors hover:text-white',
+                  activeSection === link.href ? 'text-white' : 'text-white/50',
                 )}
               >
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="btn-outline text-sm py-2.5">
+            <a href="#contact" className="px-5 py-2.5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
               Get in Touch
             </a>
           </div>
