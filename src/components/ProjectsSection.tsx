@@ -97,59 +97,59 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 space-y-4">
-            <span className="section-label">My Work</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-heading tracking-tight">
-              Featured Projects & Contributions
+          <div className="text-center mb-16 space-y-4 animate-fade-up">
+            <span className="text-xs font-semibold tracking-widest uppercase text-white/40">My Work</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              Featured Projects & Research
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Hands-on projects and contributions showcasing my journey in cybersecurity and development.
+            <p className="text-white/50 max-w-xl mx-auto text-lg font-light">
+              A selection of my work in security engineering, platform development, and research contributions.
             </p>
           </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {projects.map((project, index) => (
-              <article key={index} className="card-pro p-6 flex flex-col group">
-                <div className="mb-5">
-                  <div className="icon-container inline-block">
-                    <project.icon className="w-5 h-5 text-foreground" />
+              <article key={index} className="card-pro p-7 flex flex-col group">
+                <div className="mb-6 flex justify-between items-start">
+                  <div className="icon-container inline-flex">
+                    <project.icon className="w-6 h-6 text-white/80" />
                   </div>
                 </div>
 
                 <div className="flex-1 space-y-3">
-                  <h3 className="text-lg font-semibold text-heading group-hover:text-foreground transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm font-medium">{project.role}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-white/60 text-sm font-medium tracking-wide uppercase">{project.role}</p>
+                  <p className="text-white/50 text-sm leading-relaxed font-light mt-4">
                     {project.description}
                   </p>
                 </div>
 
-                <div className="mt-5 space-y-4">
+                <div className="mt-8 space-y-5">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span 
                         key={tagIndex}
-                        className="project-tag"
+                        className="px-2.5 py-1 text-xs font-medium bg-white/[0.03] text-white/60 border border-white/5 rounded-md group-hover:border-white/10 group-hover:bg-white/[0.05] transition-colors"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-4 pt-4 border-t border-border/50">
+                  <div className="flex gap-4 pt-5 border-t border-white/5">
                     <a 
                       href={project.links.demo} 
-                      className="link-animated text-sm font-medium"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Details
                     </a>
                     <a 
                       href={project.links.github} 
-                      className="link-animated text-sm font-medium"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       Source

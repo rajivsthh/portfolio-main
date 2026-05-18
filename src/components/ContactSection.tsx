@@ -151,16 +151,19 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="contact" className="py-24 lg:py-32 relative">
+      {/* Background ambient light */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 space-y-4">
-            <span className="section-label">Get In Touch</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-heading tracking-tight">
+          <div className="text-center mb-16 space-y-4 animate-fade-up">
+            <span className="text-xs font-semibold tracking-widest uppercase text-white/40">Get In Touch</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
               Let's Work Together
             </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">
+            <p className="text-white/50 max-w-lg mx-auto text-lg font-light">
               Interested in collaborating on security projects or have opportunities to discuss? 
               I'd love to hear from you.
             </p>
@@ -170,39 +173,39 @@ const ContactSection = () => {
             <div className="space-y-6">
               {/* Contact Info */}
               <div className="card-pro p-8">
-                <h3 className="text-lg font-semibold text-heading mb-6">Contact Information</h3>
+                <h3 className="text-xl font-bold text-white mb-8">Contact Information</h3>
                 
-                <div className="space-y-5 mb-8">
+                <div className="space-y-6 mb-10">
                   {contactInfo.map((info, index) => (
                     <a 
                       key={index}
                       href={info.href}
-                      className="contact-item group"
+                      className="flex items-center gap-5 group"
                     >
                       <div className="icon-container">
-                        <info.icon className="w-4 h-4 text-foreground" />
+                        <info.icon className="w-5 h-5 text-white/80" />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground uppercase tracking-wide">{info.label}</p>
-                        <p className="text-foreground transition-colors text-sm">{info.value}</p>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-1">{info.label}</p>
+                        <p className="text-white/80 group-hover:text-white transition-colors">{info.value}</p>
                       </div>
                     </a>
                   ))}
                 </div>
 
-                <div className="border-t border-border/50 pt-6">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide mb-4">Connect</p>
-                  <div className="flex gap-3">
+                <div className="border-t border-white/5 pt-8">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-5">Connect</p>
+                  <div className="flex gap-4">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="social-icon"
+                        className="p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300"
                         aria-label={social.label}
                       >
-                        <social.icon className="w-5 h-5" />
+                        <social.icon className="w-5 h-5 text-white/70" />
                       </a>
                     ))}
                   </div>
@@ -211,11 +214,11 @@ const ContactSection = () => {
 
               {/* Contact Form */}
               <div className="card-pro p-8">
-                <h3 className="text-lg font-semibold text-heading mb-6">Send a Message</h3>
+                <h3 className="text-xl font-bold text-white mb-8">Send a Message</h3>
                 
-                <form className="space-y-4" onSubmit={handleSubmit}>
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   <div>
-                    <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Name</label>
+                    <label className="block text-xs font-semibold uppercase tracking-widest text-white/40 mb-2.5">Name</label>
                     <input 
                       name="name"
                       type="text"
@@ -223,11 +226,11 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="input-pro"
+                      className="w-full px-4 py-3.5 rounded-lg bg-black/20 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-white/[0.03] transition-all duration-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Email</label>
+                    <label className="block text-xs font-semibold uppercase tracking-widest text-white/40 mb-2.5">Email</label>
                     <input 
                       name="email"
                       type="email"
@@ -235,11 +238,11 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="input-pro"
+                      className="w-full px-4 py-3.5 rounded-lg bg-black/20 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-white/[0.03] transition-all duration-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-2">Message</label>
+                    <label className="block text-xs font-semibold uppercase tracking-widest text-white/40 mb-2.5">Message</label>
                     <textarea 
                       name="message"
                       placeholder="Your message..."
@@ -247,18 +250,20 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="input-pro resize-none"
+                      className="w-full px-4 py-3.5 rounded-lg bg-black/20 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-white/[0.03] transition-all duration-300 resize-none"
                     />
                   </div>
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-outline w-full flex items-center justify-center gap-2"
+                    className="btn-primary w-full mt-2 group"
                   >
-                    <Send className="w-4 h-4" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    <span className="flex items-center justify-center gap-2">
+                      <Send className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </span>
                   </button>
-                  <p className="text-xs text-muted-foreground/70 text-center">
+                  <p className="text-xs text-white/30 text-center font-light mt-6">
                     {CONTACT_FORM_ENDPOINT
                       ? "Form is connected to your backend endpoint"
                       : "Primary: local backend (/api/contact), with fallback delivery enabled."}

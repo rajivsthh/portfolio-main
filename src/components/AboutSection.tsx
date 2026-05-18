@@ -30,23 +30,22 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
             {/* Left - About Text */}
             <div className="space-y-6">
-              <div className="space-y-4">
-                <span className="section-label">About Me</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-heading tracking-tight">
-                  Passionate About Cybersecurity
+              <div className="space-y-4 animate-fade-up">
+                <span className="text-xs font-semibold tracking-widest uppercase text-white/40">About Me</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                  Security Researcher
                 </h2>
               </div>
               
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-white/50 leading-relaxed font-light text-lg">
                 <p>
-                  As a dedicated cybersecurity enthusiast, I explore the intricate 
-                  world of digital security through hands-on experimentation with 
-                  network protocols, web application vulnerabilities, and security frameworks.
+                  As a security researcher and developer, I focus on identifying and mitigating 
+                  vulnerabilities across complex systems, network architectures, and modern web applications.
                 </p>
                 <p>
-                  I actively participate in hackathons and CTF competitions, applying theoretical 
-                  knowledge to real-world security challenges. My goal is to contribute to making 
-                  the digital world a safer place.
+                  Combining software engineering principles with offensive security techniques, I build 
+                  resilient systems, develop security tooling, and solve critical security challenges in 
+                  fast-paced environments.
                 </p>
               </div>
             </div>
@@ -54,27 +53,27 @@ const AboutSection = () => {
             {/* Right - Education */}
             <div>
               <div className="card-pro p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="p-2.5 rounded-lg bg-secondary border border-border">
-                    <GraduationCap className="w-5 h-5 text-foreground" />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="icon-container">
+                    <GraduationCap className="w-5 h-5 text-white/80" />
                   </div>
-                  <h3 className="text-lg font-semibold text-heading">Education</h3>
+                  <h3 className="text-xl font-bold text-white">Education</h3>
                 </div>
 
                 <div className="space-y-8">
                   {education.map((edu, index) => (
                     <div 
                       key={index} 
-                      className={`relative pl-6 border-l-2 ${edu.current ? 'border-foreground/50' : 'border-border'}`}
+                      className={`relative pl-6 border-l-2 ${edu.current ? 'border-white/20' : 'border-white/5'}`}
                     >
-                      <div className={`absolute left-[-5px] top-1 w-2 h-2 rounded-full ${edu.current ? 'bg-foreground/80' : 'bg-muted-foreground/40'}`} />
+                      <div className={`absolute left-[-5px] top-1.5 w-2 h-2 rounded-full ${edu.current ? 'bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' : 'bg-white/20'}`} />
                       <div className="space-y-2">
-                        <h4 className="font-medium text-foreground">{edu.degree}</h4>
-                        <p className="text-muted-foreground text-sm flex items-center gap-2">
+                        <h4 className="font-semibold text-white group-hover:text-white transition-colors">{edu.degree}</h4>
+                        <p className="text-white/50 text-sm flex items-center gap-2 font-medium">
                           <MapPin className="w-3.5 h-3.5" />
                           {edu.institution}
                         </p>
-                        <p className="text-muted-foreground/70 text-sm flex items-center gap-2">
+                        <p className="text-white/40 text-sm flex items-center gap-2">
                           <Calendar className="w-3.5 h-3.5" />
                           {edu.period}
                         </p>
