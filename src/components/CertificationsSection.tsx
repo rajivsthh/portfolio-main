@@ -34,6 +34,13 @@ const certifications: Certification[] = [
     icon: BookOpen,
   },
   {
+    title: "FutureFront AI Innovation Lab 2026",
+    subtitle: "Youth Innovation Lab & U.S. Embassy",
+    achievement: "Participant",
+    icon: Award,
+    highlight: true,
+  },
+  {
     title: "KIST FAIR 2081 - Certificate Image",
     subtitle: "KIST Fair Certificate (photo)",
     achievement: "Certificate Photo",

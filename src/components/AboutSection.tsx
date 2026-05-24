@@ -47,6 +47,10 @@ const AboutSection = () => {
                   resilient systems, develop security tooling, and solve critical security challenges in 
                   fast-paced environments.
                 </p>
+                <p>
+                  Recently, I was selected for the <strong>FutureFront AI Innovation Lab 2026</strong>, 
+                  a collaborative initiative organized by the Youth Innovation Lab and the U.S. Embassy Nepal.
+                </p>
               </div>
             </div>
 
