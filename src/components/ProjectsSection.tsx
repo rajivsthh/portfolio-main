@@ -89,6 +89,17 @@ const projects = [
       github: "#",
     },
   },
+  {
+    title: "FutureFront AI Innovation Lab",
+    role: "Participant",
+    description: "Participated in the FutureFront AI Innovation Lab 2026 organized by Youth Innovation Lab in collaboration with the U.S. Embassy Nepal.",
+    tags: ["AI", "Innovation", "Research"],
+    icon: FileText,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
 ];
 
 const ProjectsSection = () => {
