@@ -1,4 +1,4 @@
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useState, type MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -72,12 +72,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="p-2 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/[0.08] transition-colors">
-              <Shield className="w-5 h-5 text-white/80" />
-            </div>
-            <span className="brand-font font-semibold text-lg text-white">
-              Rajiv<span className="text-white/40">.sec</span>
-            </span>
+            <span className="brand-font font-semibold text-lg text-white">Rajiv Shrestha</span>
           </a>
 
           {/* Desktop Navigation */}
