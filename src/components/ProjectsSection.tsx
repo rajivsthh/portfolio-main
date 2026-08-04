@@ -1,30 +1,10 @@
-import { Shield, FileText, GraduationCap, Hammer, Lock, ExternalLink, Github, Boxes } from 'lucide-react';
+import { Shield, FileText, GraduationCap, Hammer, Lock, ExternalLink, Github, Boxes, Award } from 'lucide-react';
 
 const projects = [
-  {
-    title: "Warehouse Navigator",
-    role: "Full-Stack Web App",
-    description: "Built Warehouse Navigator, a full-stack warehouse consignment management web app with React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Firebase Auth, and Supabase for secure inventory, receipts, filtering, and reporting workflows.",
-    tags: ["React", "TypeScript", "Supabase", "Firebase", "Tailwind", "Full-Stack"],
-    icon: Boxes,
-    links: {
-      demo: "#",
-      github: "#",
-    },
-  },
-  {
-    title: "AI HACKATHON 2026",
-    role: "24-Hour Hackathon Project",
-    description: "Built NepalExplore in 24 hours an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
-    tags: ["AI", "Tourism", "Forecasting", "React", "TypeScript", "Node.js"],
-    icon: FileText,
-    links: {
-      demo: "#",
-      github: "https://github.com/rajivsthh/smart-trails-nepal-main",
-    },
-  },
+  // Security Engineering & Research
   {
     title: "OSaaS (Open Security as a Service) – SXC Sandbox 3.0",
+    category: "Security Engineering & Research",
     role: "SXC Sandbox 3.0 Event",
     description: "Built a privacy-focused security platform that automates vulnerability analysis and streamlines ethical hacking workflows using secure temporary workspaces.",
     tags: ["React", "Firebase", "Express", "Security"],
@@ -35,18 +15,8 @@ const projects = [
     },
   },
   {
-    title: "5th Avenue - KEC Hack-a-lite 3.0",
-    role: "KEC Hackathon",
-    description: "Built Rent A Construction — a marketplace platform for renting construction materials and equipment, reducing idle asset waste and contractor costs.",
-    tags: ["React", "Web", "Marketplace", "Hackathon"],
-    icon: Hammer,
-    links: {
-      demo: "https://5th-avenue-kec-hack-a-lite-3-o.vercel.app/",
-      github: "https://github.com/dhirendraxd/5th-Avenue-KEC-Hack-a-Lite-3.o",
-    },
-  },
-  {
     title: "SAFE-MCP Security Framework",
+    category: "Security Engineering & Research",
     role: "Contributor",
     description: "Improved security documentation and detection rules for the framework. Contributed to enhancing security protocols and vulnerability detection mechanisms.",
     tags: ["Security", "Documentation", "Framework"],
@@ -58,6 +28,7 @@ const projects = [
   },
   {
     title: "NASA Hall of Fame",
+    category: "Security Engineering & Research",
     role: "Contribution",
     description: "Recognized in the NASA Hall of Fame as part of my contributions, highlighting work that reflects technical impact and commitment.",
     tags: ["NASA", "Recognition", "Contribution"],
@@ -67,8 +38,46 @@ const projects = [
       github: "#",
     },
   },
+  // Software Development & AI Projects
+  {
+    title: "Warehouse Navigator",
+    category: "Software Development & AI Projects",
+    role: "Full-Stack Web App",
+    description: "Built Warehouse Navigator, a full-stack warehouse consignment management web app with React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Firebase Auth, and Supabase for secure inventory, receipts, filtering, and reporting workflows.",
+    tags: ["React", "TypeScript", "Supabase", "Firebase", "Tailwind", "Full-Stack"],
+    icon: Boxes,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
+  {
+    title: "AI HACKATHON 2026",
+    category: "Software Development & AI Projects",
+    role: "24-Hour Hackathon Project",
+    description: "Built NepalExplore in 24 hours an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
+    tags: ["AI", "Tourism", "Forecasting", "React", "TypeScript", "Node.js"],
+    icon: FileText,
+    links: {
+      demo: "#",
+      github: "https://github.com/rajivsthh/smart-trails-nepal-main",
+    },
+  },
+  {
+    title: "5th Avenue - KEC Hack-a-lite 3.0",
+    category: "Software Development & AI Projects",
+    role: "KEC Hackathon",
+    description: "Built Rent A Construction — a marketplace platform for renting construction materials and equipment, reducing idle asset waste and contractor costs.",
+    tags: ["React", "Web", "Marketplace", "Hackathon"],
+    icon: Hammer,
+    links: {
+      demo: "https://5th-avenue-kec-hack-a-lite-3-o.vercel.app/",
+      github: "https://github.com/dhirendraxd/5th-Avenue-KEC-Hack-a-Lite-3.o",
+    },
+  },
   {
     title: "Mitra Smart",
+    category: "Software Development & AI Projects",
     role: "100x Nepal Hackathon 2025",
     description: "AI-powered document validation and smart form-filling solution designed to streamline document processing with intelligent automation.",
     tags: ["AI", "Hackathon", "Automation"],
@@ -80,6 +89,7 @@ const projects = [
   },
   {
     title: "Seekha Nepal",
+    category: "Software Development & AI Projects",
     role: "KIST HackFest 2025",
     description: "Interactive learning platform featuring an AI Chatbot to enhance educational experiences and provide personalized learning assistance.",
     tags: ["AI Chatbot", "Education", "Platform"],
@@ -91,6 +101,7 @@ const projects = [
   },
   {
     title: "FutureFront AI Innovation Lab",
+    category: "Software Development & AI Projects",
     role: "Participant",
     description: "Participated in the FutureFront AI Innovation Lab 2026 organized by Youth Innovation Lab in collaboration with the U.S. Embassy Nepal.",
     tags: ["AI", "Innovation", "Research"],
@@ -100,9 +111,80 @@ const projects = [
       github: "#",
     },
   },
+  // Leadership & Contributions
+  {
+    title: "Technical Lead — KIST BIM College",
+    category: "Leadership & Contributions",
+    role: "Leadership Position",
+    description: "Served as a Technical Lead at KIST BIM College, assisting with technical planning, coordination, and execution of various college events and technology initiatives. Supported teams by providing technical guidance, troubleshooting, and helping organize successful events.",
+    tags: ["Leadership", "Technical Coordination", "Event Management", "Mentoring"],
+    icon: Award,
+    links: {
+      demo: "#",
+      github: "#",
+    },
+  },
 ];
 
 const ProjectsSection = () => {
+  const securityProjects = projects.filter(p => p.category === "Security Engineering & Research");
+  const developmentProjects = projects.filter(p => p.category === "Software Development & AI Projects");
+  const leadershipProjects = projects.filter(p => p.category === "Leadership & Contributions");
+
+  const renderProjectsGrid = (projectList) => (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projectList.map((project, index) => (
+        <article key={index} className="card-pro p-7 flex flex-col group">
+          <div className="mb-6 flex justify-between items-start">
+            <div className="icon-container inline-flex">
+              <project.icon className="w-6 h-6 text-white/80" />
+            </div>
+          </div>
+
+          <div className="flex-1 space-y-3">
+            <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-white/60 text-sm font-medium tracking-wide uppercase">{project.role}</p>
+            <p className="text-white/50 text-sm leading-relaxed font-light mt-4">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, tagIndex) => (
+                <span 
+                  key={tagIndex}
+                  className="px-2.5 py-1 text-xs font-medium bg-white/[0.03] text-white/60 border border-white/5 rounded-md group-hover:border-white/10 group-hover:bg-white/[0.05] transition-colors"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-4 pt-5 border-t border-white/5">
+              <a 
+                href={project.links.demo} 
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Details
+              </a>
+              <a 
+                href={project.links.github} 
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+
   return (
     <section id="projects" className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-8">
@@ -118,57 +200,31 @@ const ProjectsSection = () => {
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.map((project, index) => (
-              <article key={index} className="card-pro p-7 flex flex-col group">
-                <div className="mb-6 flex justify-between items-start">
-                  <div className="icon-container inline-flex">
-                    <project.icon className="w-6 h-6 text-white/80" />
-                  </div>
-                </div>
+          {/* Security Engineering & Research */}
+          <div className="mb-20">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-white tracking-tight">Security Engineering & Research</h3>
+              <div className="w-12 h-1 bg-white/10 rounded-full mt-3" />
+            </div>
+            {renderProjectsGrid(securityProjects)}
+          </div>
 
-                <div className="flex-1 space-y-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/60 text-sm font-medium tracking-wide uppercase">{project.role}</p>
-                  <p className="text-white/50 text-sm leading-relaxed font-light mt-4">
-                    {project.description}
-                  </p>
-                </div>
+          {/* Software Development & AI Projects */}
+          <div className="mb-20">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-white tracking-tight">Software Development & AI Projects</h3>
+              <div className="w-12 h-1 bg-white/10 rounded-full mt-3" />
+            </div>
+            {renderProjectsGrid(developmentProjects)}
+          </div>
 
-                <div className="mt-8 space-y-5">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex}
-                        className="px-2.5 py-1 text-xs font-medium bg-white/[0.03] text-white/60 border border-white/5 rounded-md group-hover:border-white/10 group-hover:bg-white/[0.05] transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-4 pt-5 border-t border-white/5">
-                    <a 
-                      href={project.links.demo} 
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Details
-                    </a>
-                    <a 
-                      href={project.links.github} 
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      Source
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
+          {/* Leadership & Contributions */}
+          <div>
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-white tracking-tight">Leadership & Contributions</h3>
+              <div className="w-12 h-1 bg-white/10 rounded-full mt-3" />
+            </div>
+            {renderProjectsGrid(leadershipProjects)}
           </div>
         </div>
       </div>
