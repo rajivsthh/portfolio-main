@@ -1,4 +1,4 @@
-import { Shield, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/rajivsthh" },
@@ -14,9 +14,6 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-8">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-white/[0.03] border border-white/10">
-              <Shield className="w-5 h-5 text-white/80" />
-            </div>
             <span className="brand-font font-semibold text-lg text-white">Rajiv Shrestha</span>
           </div>
 
@@ -38,7 +35,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-white/40 text-sm font-light text-center">
-            © {new Date().getFullYear()} Rajiv Shrestha. Security Research & Development.
+            © {new Date().getFullYear()}
           </p>
         </div>
       </div>
