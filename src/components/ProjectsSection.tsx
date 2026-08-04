@@ -6,7 +6,7 @@ const projects = [
     title: "OSaaS (Open Security as a Service) – SXC Sandbox 3.0",
     category: "Security Engineering & Research",
     role: "SXC Sandbox 3.0 Event",
-    description: "Built a privacy-focused security platform that automates vulnerability analysis and streamlines ethical hacking workflows using secure temporary workspaces.",
+    description: "Privacy-focused security platform automating vulnerability analysis and streamlining ethical hacking workflows with secure temporary workspaces.",
     tags: ["React", "Firebase", "Express", "Security"],
     icon: Lock,
     links: {
@@ -18,7 +18,7 @@ const projects = [
     title: "SAFE-MCP Security Framework",
     category: "Security Engineering & Research",
     role: "Contributor",
-    description: "Improved security documentation and detection rules for the framework. Contributed to enhancing security protocols and vulnerability detection mechanisms.",
+    description: "Enhanced security documentation and detection rules for the framework, improving security protocols and vulnerability detection mechanisms.",
     tags: ["Security", "Documentation", "Framework"],
     icon: Shield,
     links: {
@@ -30,7 +30,7 @@ const projects = [
     title: "NASA Hall of Fame",
     category: "Security Engineering & Research",
     role: "Contribution",
-    description: "Recognized in the NASA Hall of Fame as part of my contributions, highlighting work that reflects technical impact and commitment.",
+    description: "Recognized in the NASA Hall of Fame for contributions reflecting technical impact and commitment to security excellence.",
     tags: ["NASA", "Recognition", "Contribution"],
     icon: Shield,
     links: {
@@ -43,7 +43,7 @@ const projects = [
     title: "Warehouse Navigator",
     category: "Software Development & AI Projects",
     role: "Full-Stack Web App",
-    description: "Built Warehouse Navigator, a full-stack warehouse consignment management web app with React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Firebase Auth, and Supabase for secure inventory, receipts, filtering, and reporting workflows.",
+    description: "Full-stack warehouse management web app with React, TypeScript, Firebase Auth, and Supabase. Handles inventory, receipts, filtering, and reporting with secure workflows.",
     tags: ["React", "TypeScript", "Supabase", "Firebase", "Tailwind", "Full-Stack"],
     icon: Boxes,
     links: {
@@ -55,7 +55,7 @@ const projects = [
     title: "AI HACKATHON 2026",
     category: "Software Development & AI Projects",
     role: "24-Hour Hackathon Project",
-    description: "Built NepalExplore in 24 hours an AI tourism platform that uses crowd intelligence and flow forecasting to redirect travelers to hidden destinations, with trip planning, SOS safety, budget estimation, and offline support.",
+    description: "AI tourism platform built in 24 hours using crowd intelligence and flow forecasting to guide travelers to hidden destinations with trip planning, safety, and offline support.",
     tags: ["AI", "Tourism", "Forecasting", "React", "TypeScript", "Node.js"],
     icon: FileText,
     links: {
@@ -79,7 +79,7 @@ const projects = [
     title: "Mitra Smart",
     category: "Software Development & AI Projects",
     role: "100x Nepal Hackathon 2025",
-    description: "AI-powered document validation and smart form-filling solution designed to streamline document processing with intelligent automation.",
+    description: "AI-powered document validation and smart form-filling solution streamlining document processing with intelligent automation.",,
     tags: ["AI", "Hackathon", "Automation"],
     icon: FileText,
     links: {
@@ -91,7 +91,7 @@ const projects = [
     title: "Seekha Nepal",
     category: "Software Development & AI Projects",
     role: "KIST HackFest 2025",
-    description: "Interactive learning platform featuring an AI Chatbot to enhance educational experiences and provide personalized learning assistance.",
+    description: "Interactive learning platform featuring AI Chatbot for personalized educational experiences and real-time learning assistance.",,
     tags: ["AI Chatbot", "Education", "Platform"],
     icon: GraduationCap,
     links: {
@@ -103,7 +103,7 @@ const projects = [
     title: "FutureFront AI Innovation Lab",
     category: "Software Development & AI Projects",
     role: "Participant",
-    description: "Participated in the FutureFront AI Innovation Lab 2026 organized by Youth Innovation Lab in collaboration with the U.S. Embassy Nepal.",
+    description: "Participated in AI Innovation Lab 2026 organized by Youth Innovation Lab and U.S. Embassy Nepal, exploring emerging AI technologies and research.",,
     tags: ["AI", "Innovation", "Research"],
     icon: FileText,
     links: {
@@ -116,7 +116,7 @@ const projects = [
     title: "Technical Lead — KIST BIM College",
     category: "Leadership & Contributions",
     role: "Leadership Position",
-    description: "Served as a Technical Lead at KIST BIM College, assisting with technical planning, coordination, and execution of various college events and technology initiatives. Supported teams by providing technical guidance, troubleshooting, and helping organize successful events.",
+    description: "Provided technical leadership at KIST BIM College for event planning, technical coordination, and team support. Guided participants through technical challenges and organized successful technology initiatives.",,
     tags: ["Leadership", "Technical Coordination", "Event Management", "Mentoring"],
     icon: Award,
     links: {
