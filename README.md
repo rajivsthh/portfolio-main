@@ -4,7 +4,7 @@
 
 A modern, responsive portfolio website showcasing my journey in cybersecurity, development, and security research. Built with a focus on clean design, performance, and security best practices.
 
-## 👨‍💻 About Me
+##  About Me
 
 I'm a cybersecurity enthusiast and developer passionate about exploring the digital security landscape. Currently pursuing a Bachelor's in Information Management at KIST College & SS, I focus on:
 
