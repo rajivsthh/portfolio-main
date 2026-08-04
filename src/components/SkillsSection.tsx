@@ -2,24 +2,24 @@ import { Shield, Server, Terminal, Code2 } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'Security Research',
+    title: 'Offensive Security',
     icon: Shield,
-    skills: ['Web Security', 'API Security', 'Burp Suite', 'Reconnaissance'],
+    skills: ['Web Security', 'API Security', 'Burp Suite', 'Reconnaissance', 'OWASP Top 10', 'Bug Bounty'],
   },
   {
-    title: 'Systems & Infra',
+    title: 'Linux & Infrastructure',
     icon: Server,
-    skills: ['Linux', 'Networking', 'Cloud Architecture'],
+    skills: ['Linux', 'Networking', 'Docker', 'Git'],
   },
   {
-    title: 'Software Development',
+    title: 'Development',
     icon: Code2,
-    skills: ['React', 'Java', 'Spring Boot', 'TypeScript'],
+    skills: ['React', 'TypeScript', 'Python', 'Bash'],
   },
   {
-    title: 'Engineering',
+    title: 'Automation & Tooling',
     icon: Terminal,
-    skills: ['Automation', 'Python', 'CI/CD Pipelines'],
+    skills: ['Python', 'Bash', 'Automation', 'Docker', 'Git'],
   },
 ];
 
@@ -38,7 +38,7 @@ const SkillsSection = () => {
               Technical Expertise
             </h2>
             <p className="text-white/50 max-w-xl mx-auto text-lg font-light">
-              A comprehensive toolkit spanning offensive security, software development, and automation.
+              Focused on offensive security, Linux, automation, and building practical security tools.
             </p>
           </div>
 
