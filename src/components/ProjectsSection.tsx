@@ -79,7 +79,7 @@ const projects = [
     title: "Mitra Smart",
     category: "Software Development & AI Projects",
     role: "100x Nepal Hackathon 2025",
-    description: "AI-powered document validation and smart form-filling solution streamlining document processing with intelligent automation.",,
+    description: "AI-powered document validation and smart form-filling solution streamlining document processing with intelligent automation.",
     tags: ["AI", "Hackathon", "Automation"],
     icon: FileText,
     links: {
@@ -91,7 +91,7 @@ const projects = [
     title: "Seekha Nepal",
     category: "Software Development & AI Projects",
     role: "KIST HackFest 2025",
-    description: "Interactive learning platform featuring AI Chatbot for personalized educational experiences and real-time learning assistance.",,
+    description: "Interactive learning platform featuring AI Chatbot for personalized educational experiences and real-time learning assistance.",
     tags: ["AI Chatbot", "Education", "Platform"],
     icon: GraduationCap,
     links: {
@@ -103,7 +103,7 @@ const projects = [
     title: "FutureFront AI Innovation Lab",
     category: "Software Development & AI Projects",
     role: "Participant",
-    description: "Participated in AI Innovation Lab 2026 organized by Youth Innovation Lab and U.S. Embassy Nepal, exploring emerging AI technologies and research.",,
+    description: "Participated in AI Innovation Lab 2026 organized by Youth Innovation Lab and U.S. Embassy Nepal, exploring emerging AI technologies and research.",
     tags: ["AI", "Innovation", "Research"],
     icon: FileText,
     links: {
@@ -116,7 +116,7 @@ const projects = [
     title: "Technical Lead — KIST BIM College",
     category: "Leadership & Contributions",
     role: "Leadership Position",
-    description: "Provided technical leadership at KIST BIM College for event planning, technical coordination, and team support. Guided participants through technical challenges and organized successful technology initiatives.",,
+    description: "Provided technical leadership at KIST BIM College for event planning, technical coordination, and team support. Guided participants through technical challenges and organized successful technology initiatives.",
     tags: ["Leadership", "Technical Coordination", "Event Management", "Mentoring"],
     icon: Award,
     links: {
